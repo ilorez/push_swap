@@ -11,4 +11,7 @@ the push_swap is a project that challenges students to create a sorting algorith
 
 Use the link above to read about that you should after that answer the above questions and understand this image, i think that enough for now.
 
-[Complexity of sorting algorithms table](./IMGs/complexity_of_sorting_algorithms_table.jpg)
+<img alt="Complexity of sorting algorithms table" href="./IMGs/complexity_of_sorting_algorithms_table.jpg" />
+
+<!--[Complexity of sorting algorithms table](./IMGs/complexity_of_sorting_algorithms_table.jpg)
+-->
