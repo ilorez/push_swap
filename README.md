@@ -41,3 +41,13 @@ One of the sources they shared was a [Medium Article](https://medium.com/@ayogun
 
 ### Step 4 - Merge Concepts and Create a Base Algorithm  
 The article provided some excellent insights, which I combined with ideas from other sorting algorithms. This allowed me to design a basic working algorithm as a foundation for further development.  
+
+
+
+
+
+you can visit [My push-swap TLDraw board](https://www.tldraw.com/ro/e7_fqo8dLkR8jHe5QtgyP?d=v-2934.-2479.1530.743.Ym7L05aVdUrCR4WmWzNFc) that a put in some good points on it 
+
+
+
+<!--https://www.tldraw.com/r/EgvfDvK-lGUgWZVgDT-3V?d=v-2934.-2479.1530.743.Ym7L05aVdUrCR4WmWzNFc-->
