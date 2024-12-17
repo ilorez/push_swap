@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:06:37 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/16 17:56:30 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/17 18:29:37 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 
 // to functions
 int					ft_toupper(int c);
@@ -89,6 +90,7 @@ int					ft_tolower(int c);
 
 // atoi & itoa functions
 int					ft_atoi(const char *nptr);
+long				ft_atol(const char *nptr);
 char				*ft_itoa(int n);
 
 // put functions
