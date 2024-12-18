@@ -5,7 +5,7 @@
 bool ft_is_all_digits(char *str)
 {
   while (*str)
-    if (!ft_is_digit(*str))
+    if (!ft_isdigit(*str))
       return (false);
   return (true);
 }
@@ -24,19 +24,19 @@ bool ft_create_stack(int ac, char **av, t_list *stack_a)
     while (*str_nums)
     {
       if (!ft_is_all_digits(*str_nums))
-        return (ft_free_list_of_strs(str_nums));
+        return (ft_free_str_lst(str_nums));
       num = ft_atol(*str_nums);
       if (num > INT_MAX || num < INT_MIN)
       {
         ft_printf("Error\nnot valid number\nfound a number out of INT range\n");
-        return (ft_free_list_of_strs(str_nums));
+        return (ft_free_str_lst(str_nums));
       }
       ft_lst_add_front((int)num, stack_a);
       tmp = *str_nums;
       ++str_nums;
       free(tmp);
     }
-    ft_free_list_of_strs(str_nums);
+    ft_free_str_lst(str_nums);
   }
   return (true);
 }
