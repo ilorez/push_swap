@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:35:08 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/19 15:12:09 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/19 18:05:18 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 #endif
 
 t_bool	ft_create_stack(int ac, char **av, t_list **stack_a);
-t_bool	ft_is_valid(char *str);
 t_bool	ft_free_list_of_strs(char **strs);
 int ft_print_stack(t_list *stack);
 
