@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 18:03:46 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/19 18:04:44 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/19 18:10:05 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@ static t_bool	_ft_is_valid(char *str)
 	return (true);
 }
 
-static t_bool	_ft_is_duplicated(t_list *stack, t_list *node)
+static t_bool	_ft_is_dup(t_list *stack, t_list *node)
 {
-	while (*stack)
+	while (stack)
 	{
 		if (*((int *)stack->content) == *((int *)node->content))
 			return (true);
+		stack = stack->next;
 	}
 	return (false);
 }
@@ -86,7 +87,7 @@ t_bool	ft_create_stack(int ac, char **av, t_list **stack)
 			new_num = _ft_get_node(str_nums[i++]);
 			if (!new_num)
 				return ((t_bool)ft_free_str_lst(str_nums));
-			if (_ft_is_deplicated(*stack, new_num))
+			if (_ft_is_dup(*stack, new_num))
 			{
 				ft_printf("Error\nfound a duplicate number\n");
 				return ((t_bool)ft_free_str_lst(str_nums));
