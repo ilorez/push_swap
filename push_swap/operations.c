@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:36:58 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/19 16:08:34 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/19 17:33:54 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,52 @@ void ft_op_px(t_list **stack_a, t_list **stack_b)
   }
 }
 
+// this function rotate up by one number stack
 void ft_op_rx(t_list **stack)
 {
-  void  *swap;
   t_list *last;
-
 
   if (!stack)
     return ;
-  last = ft_lstlast(*stack);
-  swap = (*stack)->content;
-  (*stack)->content = last->content;
-  last->content = swap;
+  if (*stack && (*stack)->next)
+  {
+    last = ft_lstlast(*stack);
+    last->next = *stack;
+    *stack = (*stack)->next;
+    last->next->next = NULL;
+  }
 }
-//void ft_op_rrx(t_list **stack); // rra rrb
-//void ft_op_rr(t_list **stack_a, t_list **stack_b); // call rx for stack A and B
-//void ft_op_rrr(t_list **stack_a, t_list **stack_b); // call rrx for stack A and B
 
+// run rotate up for both stacks (A and B)
+void ft_op_rr(t_list **stack_a, t_list **stack_b)
+{
+  ft_op_rx(stack_a);
+  ft_op_rx(stack_b);
+}
 
+// this function rotate down by one number a stack
+void ft_op_rrx(t_list **stack)
+{
+  t_list *b_last;
 
+  if (!stack)
+    return ;
+  b_last = *stack;
+  while (b_last && b_last->next && b_last->next->next)
+    b_last = b_last->next;
 
+  if (*stack && (*stack)->next)
+  {
+    b_last->next->next = *stack;
+    *stack = b_last->next;
+    b_last->next = NULL;
+  }
+}
+
+// run rotate down for both stacks (A and B)
+void ft_op_rrr(t_list **stack_a, t_list **stack_b)
+{
+  ft_op_rrx(stack_a);
+  ft_op_rrx(stack_b);
+}
 
