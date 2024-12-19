@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:06:20 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/19 09:21:25 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/19 11:18:46 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst)
-		*lst = new;
-	else if (lst && new)
+	if (lst && new)
 	{
 		new->next = *lst;
 		*lst = new;
