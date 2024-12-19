@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:06:37 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/18 09:39:58 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/19 08:36:35 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 # define LIBFT_H
 
 // includes
-# include <stdlib.h>
-# include <unistd.h>
+# include <limits.h>
 # include <stddef.h>
 # include <stdint.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 // structure
 typedef struct s_list
@@ -57,7 +58,7 @@ void				*ft_free_str_lst(char **strs);
 
 // string functions
 size_t				ft_strlen(const char *s);
-char				*ft_strchr(const char *s, int c); // this function is for
+char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
@@ -91,7 +92,7 @@ int					ft_tolower(int c);
 
 // atoi & itoa functions
 int					ft_atoi(const char *nptr);
-long				ft_atol(const char *nptr);
+long long			ft_atol(const char *nptr);
 char				*ft_itoa(int n);
 
 // put functions
