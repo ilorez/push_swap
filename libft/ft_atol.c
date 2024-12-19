@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 18:15:44 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/19 08:37:42 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/19 09:19:10 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ long long	ft_atol(const char *nptr)
 			signe = -1;
 	while (ft_isdigit(nptr[i]))
 	{
-		if (re > (LLONG_MAX - (nptr[i] - 48)) / 10)
+		if (re > (unsigned long long int)((LLONG_MAX - (nptr[i] - 48)) / 10))
 			return (_ft_max_as_signe(signe));
 		re = re * 10 + (nptr[i++] - 48);
 	}
