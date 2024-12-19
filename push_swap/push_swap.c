@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 08:51:01 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/19 14:24:18 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:05:53 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,10 @@ int	main(int ac, char *av[])
   {
     ft_printf("stack doesn't created\n");
 		ft_lstclear(&stack_a, free);
+    return 0;
   }
-  else {
-	  ft_print_stack(stack_a);
-	  ft_lstclear(&stack_a, free);
-  }
+	ft_print_stack(stack_a);
+  ft_printf("running SA on stack a\n");
+	ft_print_stack(stack_a);
+	//ft_lstclear(&stack_a, free);
 }
