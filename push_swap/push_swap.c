@@ -6,12 +6,13 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 08:51:01 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/19 09:35:47 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/19 10:00:47 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/t_bool.h"
+#include "../libft/includes/t_bool.h"
 #include "../libft/libft.h"
+#include "../libft/ft_printf/ft_printf.h"
 #include "push_swap.h"
 
 t_bool	ft_is_all_digits(char *str)
@@ -22,7 +23,7 @@ t_bool	ft_is_all_digits(char *str)
 	return (true);
 }
 
-t_bool	ft_create_stack(int ac, char **av, t_list *stack_a)
+t_bool	ft_create_stack(int ac, char **av, t_list **stack_a)
 {
 	long long	num;
 	char		**str_nums;
@@ -31,25 +32,25 @@ t_bool	ft_create_stack(int ac, char **av, t_list *stack_a)
 
 	while (ac--)
 	{
-		str_nums = ft_split(av[ac]);
+		str_nums = ft_split(av[ac], ' ');
 		if (!str_nums)
 			return (false);
 		while (*str_nums)
 		{
 			if (!ft_is_all_digits(*str_nums))
-				return (ft_free_str_lst(str_nums));
+				return ((t_bool)ft_free_str_lst(str_nums));
 			num = ft_atol(*str_nums);
 			if (num > INT_MAX || num < INT_MIN)
 			{
 				ft_printf("Error\nnot valid number\n \
           found a number out of INT range\n");
-				return (ft_free_str_lst(str_nums));
+				return ((t_bool)ft_free_str_lst(str_nums));
 			}
-			new_num = ft_lstnew(&((int)num));
+			new_num = ft_lstnew(&num);
 			if (!new_num)
 			{
 				ft_printf("Error\nnew_num desn't allocated correctly!");
-				return (ft_free_str_lst(str_nums));
+				return ((t_bool)ft_free_str_lst(str_nums));
 			}
 			ft_lstadd_front(stack_a, new_num);
 			tmp = *str_nums;
@@ -63,13 +64,13 @@ t_bool	ft_create_stack(int ac, char **av, t_list *stack_a)
 
 int	main(int ac, char **av)
 {
-	t_list	stack_a;
+	t_list	*stack_a;
 
 	stack_a = NULL;
 	if (ac == 1)
 		ft_printf("Error\nNo numbers passed!:[\nto pass argument use for example \
 %s 1 2 3 4 5", av[0]);
 	if (!ft_create_stack(--ac, &av[1], &stack_a))
-		ft_lstclear(stack_a, free);
+		ft_lstclear(&stack_a, free);
 	ft_print_stack(stack_a);
 }
