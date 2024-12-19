@@ -71,16 +71,16 @@ After completing stack A, I started coding the allowed operations one by one, te
   Perform `PA` and `PB` → Take the first element at the top of stack X and move it to the top of stack Y.  
 
 - **SX**:  
-  Swap the first two elements at the top of stack X. If there are fewer than two elements in the stack, do nothing.  
+  Swap the first two elements at the top of stack X(`A` || `B`). If there are fewer than two elements in the stack, do nothing.  
 
 - **RX**:  
-  Rotate stack X → Move the first element at the top of the stack to the bottom.  
+  Rotate stack X(`A` || `B`) → Move the first element at the top of the stack to the bottom.  
 
 - **RR**:  
   Rotate both stacks A and B → Move the first element of both stacks to the bottom of their respective stacks.  
 
 - **RRX**:  
-  Reverse rotate stack X → Move the last element at the bottom of the stack to the top.  
+  Reverse rotate stack X(`A` || `B`) → Move the last element at the bottom of the stack to the top.  
 
 - **RRR**:  
   Reverse rotate both stacks A and B → Move the last element of both stacks to the top of their respective stacks.  
