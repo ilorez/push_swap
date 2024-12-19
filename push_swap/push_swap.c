@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 08:51:01 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/19 17:26:51 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/19 17:43:02 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	main(int ac, char *av[])
 	stack_b = NULL;
 	if (ac == 1)
 	{
-		ft_printf("Error\nNo numbers passed!:[\nto pass argument use for example \
+		ft_printf("Error\nNo numbers passed!:[\nto pass argument use for example: $>\
 %s 1 2 3 4 5", av[0]);
 		return (0);
 	}
@@ -102,16 +102,13 @@ int	main(int ac, char *av[])
 		ft_lstclear(&stack_a, free);
 		return (0);
 	}
-	ft_printf("Print Stack A\n");
-	ft_print_stack(stack_a);
-	ft_printf("Print Stack B\n");
-	ft_print_stack(stack_b);
-	ft_printf("running RRA\n");
-	ft_op_rrx(&stack_a);
-  ft_printf("running RRA\n");
-	ft_op_rrx(&stack_a);
-  ft_printf("running RRA\n");
-	ft_op_rrx(&stack_a);
+
+
+
+
+
+
+
 	ft_printf("====***V***====\n");
 	ft_printf("Print Stack A\n");
 	ft_print_stack(stack_a);
