@@ -49,8 +49,10 @@ I have used a tool called [TLDraw](https://www.tldraw.com/) to create a full alg
 I have create a repo and add to it [libft](https://github.com/ilorez/libft/tree/develop) (libft + get_next_line + ft_printf) because i found that i need all those functions, and i tried first to add some functions to libft that i will need later like: ft_atol, ft_free_list_of_strs and boolean type (because i want) ...
 
 ### Step 7 - start coding
-After i really understand what i should do i start with creating the basic function like create_stack_a , is_all_digits, print_stack(for debug) and create basic header file
+After i really understand what i should do i start with creating the basic function like create_stack_a , is_valid(for arguments), print_stack(for debug) and create basic header file
 which is function what will run at top.
+
+### Step 8 - 
 
 
 
