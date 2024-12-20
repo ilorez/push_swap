@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 09:35:04 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 18:17:45 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/20 18:32:58 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,22 @@
 #include "../libft/libft.h"
 #include "push_swap.h"
 
-
-
-
+t_bool  ft_sort_more(t_list **s_a, t_list **s_b, int size)
+{
+  t_list *oprs;
+  // start by pussing first two
+  ft_op_px(s_a, s_b);
+  if (size > 4 && size--)
+    ft_op_px(s_a, s_b);
+  while (--size == 3)
+  {
+    oprs = get_best_moves(s_a, s_b, size);
+    ft_run_oprs_lst(s_a, s_b, oprs);
+    if (ft_is_sorted(s_a))
+      break;
+  }
+  // let's make it back to stack a
+}
 
 t_bool ft_sort_stack(t_list **s_a, t_list **s_b)
 {
