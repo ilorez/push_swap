@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:35:08 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 17:34:14 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/20 18:10:47 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_bool	ft_create_stack(int ac, char **av, t_list **stack_a);
 // sort
 t_bool  ft_sort_stack(t_list **stack_a, t_list **stack_b);
 t_bool  ft_sort_three(t_list **stack);
+t_bool  ft_sort_two(t_list **stack);
 
 // utils
 t_bool  ft_is_sorted(t_list *stack, int order);
