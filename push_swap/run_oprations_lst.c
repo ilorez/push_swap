@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:38:56 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 17:34:50 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:54:44 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_bool	ft_run_oprs_lst(t_list **s_a, t_list **s_b, t_list *oprs_lst)
     }
 		while (((t_opr *)oprs_lst->content)->times)
 		{
-			ft_printf("%s\n", str[((t_opr *)oprs_lst->content)->type - 1]);
+			ft_printf("%s\n", commands[((t_opr *)oprs_lst->content)->type - 1]);
       _ft_run_type(s_a, s_b, ((t_opr *)oprs_lst->content)->type);
       ((t_opr *)oprs_lst->content)->times--;
 		}
