@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:38:56 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 16:05:46 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:34:50 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,44 +24,44 @@ static void	_ft_run_type(t_list **s_a, t_list **s_b, t_operations type)
 		ft_op_rrx(s_b);
 	else if (type == RA)
 		ft_op_rx(s_a);
-	else if (oprs == RRA)
+	else if (type == RRA)
 		ft_op_rrx(s_a);
-	else if (oprs == RR)
+	else if (type == RR)
 		ft_op_rr(s_a, s_b);
-	else if (oprs == RRR)
+	else if (type == RRR)
 		ft_op_rrr(s_a, s_b);
-	else if (oprs == PA)
+	else if (type == PA)
 		ft_op_px(s_b, s_a);
-	else if (oprs == PB)
+	else if (type == PB)
 		ft_op_px(s_a, s_b);
-	else if (oprs == SA)
+	else if (type == SA)
 		ft_op_sx(s_a);
-	else if (oprs == SB)
+	else if (type == SB)
 		ft_op_sx(s_b);
 }
 
-t_bool	ft_run_oprs_lst(t_list **s_a, t_list **s_b, t_list *oprs)
+t_bool	ft_run_oprs_lst(t_list **s_a, t_list **s_b, t_list *oprs_lst)
 {
-  if (!oprs) 
+  if (!oprs_lst) 
     return (1);
   char *str = "SA:SB:PA:PB:RA:RB:RR:RRA:RRB:RRR";
   char **commands = ft_split(str, ':');
-	while (*oprs)
+	while (oprs_lst)
 	{
-    if (!oprs->content->type)
+    if (!((t_opr *)oprs_lst->content)->type)
     {
-		  oprs = oprs->next;
+		  oprs_lst = oprs_lst->next;
       continue;
     }
-		while (oprs->content->times)
+		while (((t_opr *)oprs_lst->content)->times)
 		{
-			ft_printf("%s\n", str[oprs->content->type - 1]);
-      _ft_run_type(s_a, s_b, oprs->content->type);
-      oprs->content->times--;
+			ft_printf("%s\n", str[((t_opr *)oprs_lst->content)->type - 1]);
+      _ft_run_type(s_a, s_b, ((t_opr *)oprs_lst->content)->type);
+      ((t_opr *)oprs_lst->content)->times--;
 		}
-		oprs = oprs->next;
+		oprs_lst = oprs_lst->next;
 	}
   ft_free_str_lst(commands);
-  ft_lstclear(&oprs, free);
+  ft_lstclear(&oprs_lst, free);
 	return (1);
 }

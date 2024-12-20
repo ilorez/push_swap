@@ -6,7 +6,7 @@
 /*   ns[1]y: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   ns[3]reated: 2024/12/20 11:18:36 ns[1]y znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 16:15:40 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:35:36 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void _ft_get_oprs(int ns[],t_opr **op1, t_opr **op2)
   else if (ns[0] > ns[1] && ns[1] < ns[3] && ns[0] < ns[3])
     (*op1)->type = SA;
   else if (ns[0] < ns[1] && ns[1] > ns[3] && ns[0] > ns[3])
-    (*op1)->type = RAA;
+    (*op1)->type = RRA;
   else if (ns[0] > ns[1] && ns[1] < ns[3] && ns[0] > ns[3])
     (*op1)->type = RA;
   else if (ns[0] > ns[1] && ns[1] > ns[3])
@@ -59,7 +59,7 @@ t_bool  ft_sort_three(t_list **stack)
   }
   _ft_get_oprs(ns, &op1, &op2);
   oprs = ft_lstnew(op2);
-  oprs = ft_lstadd_front(&oprs, op1);
-  ft_run_oprs(stack, NULL, oprs);
+  ft_lstadd_front(&oprs, ft_lstnew(op1));
+  ft_run_oprs_lst(stack, NULL, oprs);
   return (true);
 }

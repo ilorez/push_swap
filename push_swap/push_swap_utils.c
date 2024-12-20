@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:37:36 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 16:17:13 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:12:04 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_bool  ft_is_sorted(t_list *stack, int order)
   {
     if (*((int *)stack->content) * order > 
       *((int *)stack->next->content) * order)
-      return (0)
+      return (0);
     stack = stack->next;
   }
   return (1);
