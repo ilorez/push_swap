@@ -6,7 +6,7 @@
 /*   ns[1]y: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   ns[3]reated: 2024/12/20 11:18:36 ns[1]y znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 11:37:23 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:15:40 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,14 @@ t_bool  ft_sort_three(t_list **stack)
   ns[3] = *(int*)(*stack)->next->next->content;
   op1 = ft_oprnew(1, NONE);
   op2 = ft_oprnew(1, NONE);
+  if (!op1 || !op2)
+  {
+    ft_printf("Error\ncould not create operation\n");
+    return (false);
+  }
   _ft_get_oprs(ns, &op1, &op2);
   oprs = ft_lstnew(op2);
-  oprs = ft_lstadd_front(op1);
-
+  oprs = ft_lstadd_front(&oprs, op1);
+  ft_run_oprs(stack, NULL, oprs);
+  return (true);
 }

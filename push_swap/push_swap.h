@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:35:08 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 11:37:55 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:14:24 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,17 @@
 # define INT_MIN -2147483648
 #endif
 
+// create stack
 t_bool	ft_create_stack(int ac, char **av, t_list **stack_a);
-t_bool	ft_free_list_of_strs(char **strs);
+
+// sort
 t_bool  ft_sort_stack(t_list **stack_a, t_list **stack_b);
+t_bool  ft_sort_three(t_list **stack);
+
+// utils
 t_bool  ft_is_sorted(t_list *stack, int order);
+
+// debugging
 int ft_print_stack(t_list *stack);
 
 // operations (allowed actions)

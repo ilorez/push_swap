@@ -6,10 +6,14 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:37:36 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 11:37:43 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:17:13 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include "../libft/includes/t_bool.h"
+#include "../libft/libft.h"
+#include "push_swap.h"
 
 t_bool  ft_is_sorted(t_list *stack, int order)
 {
