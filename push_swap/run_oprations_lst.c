@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:38:56 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 17:54:44 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/21 06:45:58 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,5 @@ t_bool	ft_run_oprs_lst(t_list **s_a, t_list **s_b, t_list *oprs_lst)
 		oprs_lst = oprs_lst->next;
 	}
   ft_free_str_lst(commands);
-  ft_lstclear(&oprs_lst, free);
 	return (1);
 }

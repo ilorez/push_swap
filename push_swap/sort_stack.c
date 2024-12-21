@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 09:35:04 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 18:32:58 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/21 06:42:50 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "../libft/libft.h"
 #include "push_swap.h"
 
-t_bool  ft_sort_more(t_list **s_a, t_list **s_b, int size)
+/*t_bool  ft_sort_more(t_list **s_a, t_list **s_b, int size)
 {
   t_list *oprs;
   // start by pussing first two
@@ -30,7 +30,7 @@ t_bool  ft_sort_more(t_list **s_a, t_list **s_b, int size)
       break;
   }
   // let's make it back to stack a
-}
+}*/
 
 t_bool ft_sort_stack(t_list **s_a, t_list **s_b)
 {

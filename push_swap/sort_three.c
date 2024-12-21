@@ -6,7 +6,7 @@
 /*   ns[1]y: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   ns[2]reated: 2024/12/20 11:18:36 ns[1]y znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 17:56:33 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/21 06:46:15 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ t_bool  ft_sort_three(t_list **stack)
   oprs = ft_lstnew(op2);
   ft_lstadd_front(&oprs, ft_lstnew(op1));
   ft_run_oprs_lst(stack, NULL, oprs);
+  ft_lstclear(&oprs, free);
   return (true);
 }
