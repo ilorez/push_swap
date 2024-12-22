@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:38:56 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/21 06:45:58 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:17:20 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_bool	ft_run_oprs_lst(t_list **s_a, t_list **s_b, t_list *oprs_lst)
 {
   if (!oprs_lst) 
     return (1);
-  char *str = "SA:SB:PA:PB:RA:RB:RR:RRA:RRB:RRR";
+  char *str = "sa:sb:pa:pb:ra:rb:rr:rra:rrb:rrr";
   char **commands = ft_split(str, ':');
 	while (oprs_lst)
 	{

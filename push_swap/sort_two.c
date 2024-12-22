@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:18:03 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 18:19:04 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:18:03 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_bool ft_sort_two(t_list **stack)
   if (ns[0] > ns[1])
   {
     ft_op_sx(stack);
-    ft_printf("SA\n");
+    ft_printf("sa\n");
   }
   return (true);
 }

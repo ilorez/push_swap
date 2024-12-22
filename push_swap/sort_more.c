@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:14:33 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/22 17:03:17 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:18:23 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,10 +200,10 @@ t_bool  ft_sort_more(t_list **s_a, t_list **s_b, int size)
   // start by pussing first two
   ft_op_px(s_a, s_b);
   size_b = 1;
-  ft_printf("PB\n");
+  ft_printf("pb\n");
   if (size > 4 && size--)
   {
-    ft_printf("PB\n");
+    ft_printf("pb\n");
     ft_op_px(s_a, s_b);
   }
   while (--size > 3 && ++size_b)
