@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 18:03:46 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/19 18:10:05 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 18:31:45 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ static t_list	*_ft_get_node(char *str_num)
 
 	if (!_ft_is_valid(str_num))
 	{
-		ft_printf("Error\nnot all digits\n");
+		//ft_printf("Error\nnot all digits\n");
 		return (NULL);
 	}
 	num = ft_atol(str_num);
 	if (num > INT_MAX || num < INT_MIN)
 	{
-		ft_printf("Error\nnot valid number\n \
+		//ft_printf("Error\nnot valid number\n \
       found a number out of INT range\n");
 		return (NULL);
 	}
@@ -64,7 +64,7 @@ static t_list	*_ft_get_node(char *str_num)
 	new_num = ft_lstnew((int_num));
 	if (!new_num)
 	{
-		ft_printf("Error\nnew_num desn't allocated correctly!");
+		//ft_printf("Error\nnew_num desn't allocated correctly!");
 		return (NULL);
 	}
 	return (new_num);
@@ -75,10 +75,15 @@ t_bool	ft_create_stack(int ac, char **av, t_list **stack)
 	char	**str_nums;
 	t_list	*new_num;
 	int		i;
+  int j;
 
+  j = 1;
 	while (--ac > 0)
 	{
-		str_nums = ft_split(av[ac], ' ');
+    if (av[j][0] == 0)
+      return false;
+		str_nums = ft_split(av[j], ' ');
+    j++;
 		if (!str_nums)
 			return (false);
 		i = 0;
@@ -89,7 +94,7 @@ t_bool	ft_create_stack(int ac, char **av, t_list **stack)
 				return ((t_bool)ft_free_str_lst(str_nums));
 			if (_ft_is_dup(*stack, new_num))
 			{
-				ft_printf("Error\nfound a duplicate number\n");
+				//ft_printf("Error\nfound a duplicate number\n");
 				return ((t_bool)ft_free_str_lst(str_nums));
 			}
 			ft_lstadd_back(stack, new_num);
