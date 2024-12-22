@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:14:33 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/22 15:20:20 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:03:17 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,48 @@ t_list  *ft_get_best_moves(t_list *s_a, t_list *s_b, int la, int lb)
   return ft_create_oprs(rxx_best);
 }
 
+void ft_rotate_to_sort(t_list **stack, int size)
+{
+  int min_pos;
+  t_list  *oprs;
+  
+  min_pos = ft_get_min_pos(*stack, *(int *)((*stack)->content));
+  if (min_pos < (size - min_pos))
+    oprs = ft_lstnew(ft_oprnew(min_pos, RA));
+  else
+    oprs = ft_lstnew(ft_oprnew(size - min_pos, RRA));
+  ft_run_oprs_lst(stack, NULL, oprs);
+  ft_lstclear(&oprs, free);
+}
+
+
+void  ft_return_num_to_stack_a(t_list **s_a, t_list **s_b, int la, int lb)
+{
+  t_list *oprs;
+  int num;
+  int b_pos;
+
+  oprs = ft_lstnew(ft_oprnew(1, PA));
+  num = *(int *)(*s_b)->content;
+  b_pos = ft_get_pos_of(*s_a, la, num);
+  if (b_pos > (la - b_pos))
+    ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew((la - b_pos), RRA)));
+  else
+    ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(b_pos, RA)));
+  ft_run_oprs_lst(s_a, s_b, oprs);
+  ft_lstclear(&oprs, free);
+}
+
+void  ft_return_to_stack_a(t_list **s_a, t_list **s_b, int la, int lb)
+{
+  while (*s_b)
+  {
+    ft_return_num_to_stack_a(s_a, s_b, la, lb);
+    la++;
+    lb--;
+  }
+}
+
 t_bool  ft_sort_more(t_list **s_a, t_list **s_b, int size)
 {
   t_list *oprs;
@@ -168,12 +210,13 @@ t_bool  ft_sort_more(t_list **s_a, t_list **s_b, int size)
   {
     oprs = ft_get_best_moves(*s_a, *s_b, size, size_b);
     ft_run_oprs_lst(s_a, s_b, oprs);
+    ft_lstclear(&oprs, free);
     if (ft_is_sorted(*s_a, 1))
       break;
   }
   ft_sort_three(s_a);
-
-
+  ft_return_to_stack_a(s_a, s_b, ft_lstsize(*s_a), ft_lstsize(*s_b));
+  ft_rotate_to_sort(s_a, ft_lstsize(*s_a));
   return (1);
   // let's make it back to stack a
 }

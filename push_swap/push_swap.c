@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 08:51:01 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/20 16:58:13 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:06:23 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,20 @@ int	main(int ac, char *av[])
 	}
 
   //ft_op_px(&stack_a, &stack_b);
-	ft_printf("Print Stack A\n");
-	ft_print_stack(stack_a);
-	ft_printf("Print Stack B\n");
-	ft_print_stack(stack_b);
+	//ft_printf("Print Stack A\n");
+	//ft_print_stack(stack_a);
+	//ft_printf("Print Stack B\n");
+	//ft_print_stack(stack_b);
 
 
   ft_sort_stack(&stack_a, &stack_b);
 	//ft_printf("running RRR\n");
 	//ft_op_rrr(&stack_a, &stack_b);
-	ft_printf("====***V***====\n");
-	ft_printf("Print Stack A\n");
-	ft_print_stack(stack_a);
-	ft_printf("Print Stack B\n");
-	ft_print_stack(stack_b);
+	//ft_printf("====***V***====\n");
+	//ft_printf("Print Stack A\n");
+	//ft_print_stack(stack_a);
+	//ft_printf("Print Stack B\n");
+	//ft_print_stack(stack_b);
 
   // clear stacks
 	ft_lstclear(&stack_a, free);
