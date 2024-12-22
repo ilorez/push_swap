@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 13:22:17 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/22 13:39:59 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 15:07:49 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	ft_get_right_order(t_list *stack, int min)
 	}
 	if (stack->next)
 		after_n = stack->next;
-	else if (!before_n)
+	if (!before_n)
 		before_n = ft_lstlast(stack);
 	if (*(int *)before_n->content > *(int *)after_n->content)
 		return (1);

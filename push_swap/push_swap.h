@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:35:08 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/22 13:34:31 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 15:15:11 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,6 @@ void ft_op_px(t_list **stack_a, t_list **stack_b); // pa pb
 void ft_op_rr(t_list **stack_a, t_list **stack_b); // call rx for stack A and B
 void ft_op_rrr(t_list **stack_a, t_list **stack_b); // call rrx for stack A and B
 
+// sort more
+t_bool  ft_sort_more(t_list **s_a, t_list **s_b, int size);
 #endif
