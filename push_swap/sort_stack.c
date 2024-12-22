@@ -6,13 +6,14 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 09:35:04 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/22 10:52:06 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 13:44:25 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/ft_printf/ft_printf.h"
 #include "../libft/includes/t_bool.h"
 #include "../libft/libft.h"
+#include "./lst_oprs/oprs.h"
 #include "push_swap.h"
 
 
@@ -92,54 +93,33 @@ void  ft_get_rxx_best(int rxx[], int rxx_b[])
   rxx_b[4] = b_sum;
 }
 
-t_list ft_create_oprs(int *rxx)
+t_list *ft_create_oprs(int *rxx)
 {
   t_list *oprs;
 
   oprs = ft_lstnew(ft_oprnew(1, PB));
   while (rxx[0] && rxx[1])
   {
-    ft_lstadd_front(oprs, ft_lstnew(ft_oprnew(1, RR)));
+    ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RR)));
     rxx[0]--;
     rxx[1]--;
   }
   while (rxx[2] && rxx[3])
   {
-    ft_lstadd_front(oprs, ft_lstnew(ft_oprnew(1, RRR)));
+    ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RRR)));
     rxx[2]--;
     rxx[3]--;
   }
   while (rxx[0]-- > 0)
-    ft_lstadd_front(oprs, ft_lstnew(ft_oprnew(1, RA)));
+    ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RA)));
   while (rxx[1]-- > 0)
-    ft_lstadd_front(oprs, ft_lstnew(ft_oprnew(1, RB)));
+    ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RB)));
   
   while (rxx[3]-- > 0)
-    ft_lstadd_front(oprs, ft_lstnew(ft_oprnew(1, RRB)));
+    ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RRB)));
   while (rxx[2]-- > 0)
-    ft_lstadd_front(oprs, ft_lstnew(ft_oprnew(1, RRA)));
+    ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RRA)));
   return (oprs);
-}
-
-
-int ft_get_pos_of(t_list *stack, int n)
-{
-  int i;
-  int a;
-  int b;
-  
-  if (!stack)
-    return (0);
-  i = 1;
-  while (stack && stack->next)
-  {
-    a = *(int *)stack->content;
-    b = *(int *)stack->next->content;
-
-    i++;
-    stack = stack->next;
-  }
-  return (0);
 }
 
 t_list  *ft_get_best_moves(t_list *s_a, t_list *s_b, int la, int lb)
@@ -155,10 +135,10 @@ t_list  *ft_get_best_moves(t_list *s_a, t_list *s_b, int la, int lb)
   // 3: rrb
   rxx[0] = 0;
   rxx_best[0] = -1;
-  while (*s_a)
+  while (s_a)
   {
-    num = *(int *)((head)->content);
-    rxx[1] = ft_get_pos_of(s_b, num, lb);
+    num = *(int *)(s_a->content);
+    rxx[1] = ft_get_pos_of(s_b, lb, num);
     rxx[2] = la - rxx[0];
     rxx[3] = lb - rxx[1];
     ft_get_rxx_best(rxx, rxx_best);
@@ -169,7 +149,6 @@ t_list  *ft_get_best_moves(t_list *s_a, t_list *s_b, int la, int lb)
   }
   return ft_create_oprs(rxx_best);
 }
-
 
 t_bool  ft_sort_more(t_list **s_a, t_list **s_b, int size)
 {
@@ -185,9 +164,10 @@ t_bool  ft_sort_more(t_list **s_a, t_list **s_b, int size)
   {
     oprs = ft_get_best_moves(*s_a, *s_b, size, size_b);
     ft_run_oprs_lst(s_a, s_b, oprs);
-    if (ft_is_sorted(s_a))
+    if (ft_is_sorted(*s_a, 1))
       break;
   }
+  return (1);
   // let's make it back to stack a
 }
 

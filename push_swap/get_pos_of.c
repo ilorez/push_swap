@@ -6,16 +6,13 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 13:22:17 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/22 13:24:31 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 13:39:59 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_bool	ft_is_n_between(int n, int a, int b)
-{
-	if ((a > b && n > b && n < a) || (a < b && n < b && n > a))
-		return (true);
-	return (false);
-}
+#include "../libft/includes/t_bool.h"
+#include "../libft/libft.h"
+#include "push_swap.h"
 
 int	ft_get_min_pos(t_list *stack, int min)
 {
@@ -41,7 +38,7 @@ int	ft_get_min_pos(t_list *stack, int min)
 
 // this function always stack that is have more then two numbers
 // min: the first element by default
-int	ft_get_right_order(t_list *stack, int min)
+static int	ft_get_right_order(t_list *stack, int min)
 {
 	t_list	*before_n;
 	t_list	*after_n;
@@ -105,7 +102,7 @@ int	ft_get_pos_of(t_list *stack, int size, int n)
 	a = *(int *)stack->content;
 	b = *(int *)stack->next->content;
 	if (size == 2)
-		return ((int)ft_is_n_between(n, a, b));
+		return ((int)ft_is_between(n, a, b));
 	order = ft_get_right_order(stack, a);
 	first = a;
 	return (_ft_get_pos(stack, n, order, first));
