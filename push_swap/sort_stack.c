@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 09:35:04 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/21 18:25:52 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/22 10:52:06 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,7 @@ t_list  *ft_get_best_moves(t_list *s_a, t_list *s_b, int la, int lb)
   while (*s_a)
   {
     num = *(int *)((head)->content);
-    rxx[1] = ft_get_pos_of(s_b, num);
+    rxx[1] = ft_get_pos_of(s_b, num, lb);
     rxx[2] = la - rxx[0];
     rxx[3] = lb - rxx[1];
     ft_get_rxx_best(rxx, rxx_best);
