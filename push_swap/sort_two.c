@@ -15,20 +15,20 @@
 #include "../libft/libft.h"
 #include "push_swap.h"
 
-t_bool ft_sort_two(t_list **stack)
+t_bool	ft_sort_two(t_list **stack)
 {
-  int ns[2];
+	int	ns[2];
 
-  if (!stack)
-    return (false);
-  if (!*stack || !(*stack)->next)
-    return (false);
-  ns[0] = *(int*)(*stack)->content;
-  ns[1] = *(int*)(*stack)->next->content;
-  if (ns[0] > ns[1])
-  {
-    ft_op_sx(stack);
-    ft_printf("sa\n");
-  }
-  return (true);
+	if (!stack)
+		return (false);
+	if (!*stack || !(*stack)->next)
+		return (false);
+	ns[0] = *(int *)(*stack)->content;
+	ns[1] = *(int *)(*stack)->next->content;
+	if (ns[0] > ns[1])
+	{
+		ft_op_sx(stack);
+		ft_printf("sa\n");
+	}
+	return (true);
 }

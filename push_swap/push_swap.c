@@ -24,13 +24,13 @@ int	main(int ac, char *av[])
 
 	stack_a = NULL;
 	stack_b = NULL;
-  err_code = ERR_SUCCESS;
+	err_code = ERR_SUCCESS;
 	if (ac == 1)
 		return (0);
 	if (!ft_create_stack(ac, av, &stack_a, &err_code))
 	{
-    if (err_code == ERR_SUCCESS) 
-      err_code = ERR_MALLOC_FAIL;
+		if (err_code == ERR_SUCCESS)
+			err_code = ERR_MALLOC_FAIL;
 		ft_print_error(err_code);
 		ft_lstclear(&stack_a, free);
 		return (0);

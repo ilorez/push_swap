@@ -10,23 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../libft/includes/t_bool.h"
 #include "../libft/libft.h"
 #include "push_swap.h"
 
-t_bool  ft_is_sorted(t_list *stack, int order)
+t_bool	ft_is_sorted(t_list *stack, int order)
 {
-  if (!stack)
-    return (0);
-  while (stack && stack->next)
-  {
-    if (*((int *)stack->content) * order > 
-      *((int *)stack->next->content) * order)
-      return (0);
-    stack = stack->next;
-  }
-  return (1);
+	if (!stack)
+		return (0);
+	while (stack && stack->next)
+	{
+		if (*((int *)stack->content) * order > *((int *)stack->next->content)
+			* order)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
 
 t_bool	ft_is_between(int n, int a, int b)
