@@ -21,7 +21,9 @@ FLAGS = -Wall -Wextra -Werror -g
 LIBFT_DR = ../libft
 
 NAME = push_swap
-BUILD_DR = ../build
+##../build
+
+BUILD_DR = .
 INCLUDES_DR = ../libft/includes
 CC = cc
 AR = ar rc

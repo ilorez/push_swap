@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:14:33 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 14:55:59 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:06:13 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,8 @@ t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size)
 			break ;
 	}
 	ft_sort_three(s_a);
-	ft_return_to_stack_a(s_a, s_b, ft_lstsize(*s_a), ft_lstsize(*s_b));
-	ft_rotate_to_sort(s_a, ft_lstsize(*s_a));
+  
+	//ft_return_to_stack_a(s_a, s_b, ft_lstsize(*s_a), ft_lstsize(*s_b));
+	//ft_rotate_to_sort(s_a, ft_lstsize(*s_a));
 	return (1);
 }
