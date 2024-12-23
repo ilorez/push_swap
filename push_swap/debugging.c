@@ -19,10 +19,10 @@ int	ft_print_stack(t_list *stack)
 
 	count = ft_printf("==================\n");
 	while (stack)
-  {
+	{
 		count += ft_printf("|%d|\n", *((int *)stack->content));
-    stack = stack->next;
-  }
+		stack = stack->next;
+	}
 	count += ft_printf("==================\n");
 	return (count);
 }

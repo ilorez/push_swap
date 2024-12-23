@@ -6,13 +6,14 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 18:03:46 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/22 18:31:45 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/23 10:39:04 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/ft_printf/ft_printf.h"
 #include "../libft/includes/t_bool.h"
 #include "../libft/libft.h"
+#include "./error_manager.h"
 #include "push_swap.h"
 
 static t_bool	_ft_is_valid(char *str)
@@ -41,7 +42,7 @@ static t_bool	_ft_is_dup(t_list *stack, t_list *node)
 	return (false);
 }
 
-static t_list	*_ft_get_node(char *str_num)
+static t_list	*_ft_get_node(char *str_num, t_error_code *err_code)
 {
 	long long	num;
 	t_list		*new_num;
@@ -49,56 +50,66 @@ static t_list	*_ft_get_node(char *str_num)
 
 	if (!_ft_is_valid(str_num))
 	{
-		//ft_printf("Error\nnot all digits\n");
+		*err_code = ERR_INVALID_ARG;
 		return (NULL);
 	}
 	num = ft_atol(str_num);
 	if (num > INT_MAX || num < INT_MIN)
 	{
-		//ft_printf("Error\nnot valid number\n \
-      found a number out of INT range\n");
+		*err_code = ERR_OUT_INT_RANGE;
 		return (NULL);
 	}
 	int_num = malloc(sizeof(int));
+	if (!int_num)
+		return (false);
 	*int_num = (int)num;
 	new_num = ft_lstnew((int_num));
 	if (!new_num)
-	{
-		//ft_printf("Error\nnew_num desn't allocated correctly!");
 		return (NULL);
-	}
 	return (new_num);
 }
 
-t_bool	ft_create_stack(int ac, char **av, t_list **stack)
+static t_bool	_ft_loop_nums(char **str_nums, t_list **s, t_error_code *e_c)
 {
-	char	**str_nums;
 	t_list	*new_num;
 	int		i;
-  int j;
 
-  j = 1;
+	i = 0;
+	while (str_nums[i])
+	{
+		new_num = _ft_get_node(str_nums[i++], e_c);
+		if (!new_num)
+			return ((t_bool)ft_free_str_lst(str_nums));
+		if (_ft_is_dup(*s, new_num))
+		{
+			*e_c = ERR_DUPLICATED_ARG;
+			return ((t_bool)ft_free_str_lst(str_nums));
+		}
+		ft_lstadd_back(s, new_num);
+	}
+	return (true);
+}
+
+t_bool	ft_create_stack(int ac, char **av, t_list **stack,
+		t_error_code *err_code)
+{
+	char	**str_nums;
+	int		j;
+
+	j = 1;
 	while (--ac > 0)
 	{
-    if (av[j][0] == 0)
-      return false;
+		if (av[j][0] == 0)
+		{
+			*err_code = ERR_EMPTY_ARG;
+			return (false);
+		}
 		str_nums = ft_split(av[j], ' ');
-    j++;
+		j++;
 		if (!str_nums)
 			return (false);
-		i = 0;
-		while (str_nums[i])
-		{
-			new_num = _ft_get_node(str_nums[i++]);
-			if (!new_num)
-				return ((t_bool)ft_free_str_lst(str_nums));
-			if (_ft_is_dup(*stack, new_num))
-			{
-				//ft_printf("Error\nfound a duplicate number\n");
-				return ((t_bool)ft_free_str_lst(str_nums));
-			}
-			ft_lstadd_back(stack, new_num);
-		}
+		if (!_ft_loop_nums(str_nums, stack, err_code))
+			return (false);
 		ft_free_str_lst(str_nums);
 	}
 	return (true);
