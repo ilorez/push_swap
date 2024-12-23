@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:35:08 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 11:25:48 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:43:57 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,12 @@ void	ft_op_rxx(t_list **stack_a, t_list **stack_b, t_bool reverse);
 
 // sort more
 t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size);
+void	ft_get_rxx_best(int rxx[], int rxx_b[]);
+// sort more utils 1
+t_list	*ft_get_best_moves(t_list *s_a, t_list *s_b, int la, int lb);
+// sort more utils 2
+void	ft_return_to_stack_a(t_list **s_a, t_list **s_b, int la, int lb);
+void	ft_rotate_to_sort(t_list **stack, int size);
+t_list	*ft_create_oprs(int *rxx);
+int	ft_get_sum_rxx(int rxx[]);
 #endif

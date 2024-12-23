@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:14:33 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 11:28:10 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:40:04 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,6 @@
 #include "../libft/libft.h"
 #include "./lst_oprs/oprs.h"
 #include "push_swap.h"
-
-int	_ft_get_sum_rxx(int rxx[])
-{
-	int	sum;
-	int	tmp[4];
-
-	ft_memcpy(tmp, rxx, 4 * sizeof(int));
-	sum = 0;
-	while (tmp[0] && tmp[1])
-	{
-		sum++;
-		tmp[0]--;
-		tmp[1]--;
-	}
-	while (tmp[0]-- > 0 || tmp[1]-- > 0)
-		sum++;
-	while (tmp[2] && tmp[3])
-	{
-		sum++;
-		tmp[2]--;
-		tmp[3]--;
-	}
-	while (tmp[2]-- > 0 || tmp[3]-- > 0)
-		sum++;
-	return (sum);
-}
 
 void	ft_get_rxx_best(int rxx[], int rxx_b[])
 {
@@ -59,12 +33,12 @@ void	ft_get_rxx_best(int rxx[], int rxx_b[])
 		b_rxx[3] = 0;
 	else
 		b_rxx[1] = 0;
-	b_sum = _ft_get_sum_rxx(b_rxx);
+	b_sum = ft_get_sum_rxx(b_rxx);
 	// s2: ra rb
 	ft_memcpy(t_rxx, rxx, 4 * sizeof(int));
 	t_rxx[2] = 0;
 	t_rxx[3] = 0;
-	t_sum = _ft_get_sum_rxx(t_rxx);
+	t_sum = ft_get_sum_rxx(t_rxx);
 	if (t_sum < b_sum)
 	{
 		b_sum = t_sum;
@@ -74,7 +48,7 @@ void	ft_get_rxx_best(int rxx[], int rxx_b[])
 	ft_memcpy(t_rxx, rxx, 4 * sizeof(int));
 	t_rxx[0] = 0;
 	t_rxx[1] = 0;
-	t_sum = _ft_get_sum_rxx(t_rxx);
+	t_sum = ft_get_sum_rxx(t_rxx);
 	if (t_sum < b_sum)
 	{
 		b_sum = t_sum;
@@ -86,103 +60,6 @@ void	ft_get_rxx_best(int rxx[], int rxx_b[])
 		return ;
 	ft_memcpy(rxx_b, b_rxx, 4 * sizeof(int));
 	rxx_b[4] = b_sum;
-}
-
-t_list	*ft_create_oprs(int *rxx)
-{
-	t_list	*oprs;
-
-	oprs = ft_lstnew(ft_oprnew(1, PB));
-	while (rxx[0] && rxx[1])
-	{
-		ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RR)));
-		rxx[0]--;
-		rxx[1]--;
-	}
-	while (rxx[2] && rxx[3])
-	{
-		ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RRR)));
-		rxx[2]--;
-		rxx[3]--;
-	}
-	while (rxx[0]-- > 0)
-		ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RA)));
-	while (rxx[1]-- > 0)
-		ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RB)));
-	while (rxx[3]-- > 0)
-		ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RRB)));
-	while (rxx[2]-- > 0)
-		ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(1, RRA)));
-	return (oprs);
-}
-
-// rxx:
-// 0: ra
-// 1: rb
-// 2: rra
-// 3: rrb
-t_list	*ft_get_best_moves(t_list *s_a, t_list *s_b, int la, int lb)
-{
-	int	num;
-	int	rxx[4];
-	int	rxx_best[5];
-
-	rxx[0] = 0;
-	rxx_best[0] = -1;
-	while (s_a)
-	{
-		num = *(int *)(s_a->content);
-		rxx[1] = ft_get_pos_of(s_b, lb, num);
-		rxx[2] = la - rxx[0];
-		rxx[3] = lb - rxx[1];
-		ft_get_rxx_best(rxx, rxx_best);
-		if (rxx_best[4] < 3)
-			return (ft_create_oprs(rxx_best));
-		rxx[0]++;
-		s_a = s_a->next;
-	}
-	return (ft_create_oprs(rxx_best));
-}
-
-void	ft_rotate_to_sort(t_list **stack, int size)
-{
-	int		min_pos;
-	t_list	*oprs;
-
-	min_pos = ft_get_min_pos(*stack, *(int *)((*stack)->content));
-	if (min_pos < (size - min_pos))
-		oprs = ft_lstnew(ft_oprnew(min_pos, RA));
-	else
-		oprs = ft_lstnew(ft_oprnew(size - min_pos, RRA));
-	ft_run_oprs_lst(stack, NULL, oprs);
-	ft_lstclear(&oprs, free);
-}
-
-static void	ft_return_num_to_stack_a(t_list **s_a, t_list **s_b, int la, int lb)
-{
-	t_list	*oprs;
-	int		num;
-	int		b_pos;
-
-	oprs = ft_lstnew(ft_oprnew(1, PA));
-	num = *(int *)(*s_b)->content;
-	b_pos = ft_get_pos_of(*s_a, la, num);
-	if (b_pos > (la - b_pos))
-		ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew((la - b_pos), RRA)));
-	else
-		ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(b_pos, RA)));
-	ft_run_oprs_lst(s_a, s_b, oprs);
-	ft_lstclear(&oprs, free);
-}
-
-static void	ft_return_to_stack_a(t_list **s_a, t_list **s_b, int la, int lb)
-{
-	while (*s_b)
-	{
-		ft_return_num_to_stack_a(s_a, s_b, la, lb);
-		la++;
-		lb--;
-	}
 }
 
 t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size)
