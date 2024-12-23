@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:34:59 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 11:38:20 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/23 15:08:58 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_rotate_to_sort(t_list **stack, int size)
 	ft_lstclear(&oprs, free);
 }
 
-static void	ft_return_num_to_stack_a(t_list **s_a, t_list **s_b, int la, int lb)
+static void	ft_return_num_to_stack_a(t_list **s_a, t_list **s_b, int la)
 {
 	t_list	*oprs;
 	int		num;
@@ -105,7 +105,7 @@ void	ft_return_to_stack_a(t_list **s_a, t_list **s_b, int la, int lb)
 {
 	while (*s_b)
 	{
-		ft_return_num_to_stack_a(s_a, s_b, la, lb);
+		ft_return_num_to_stack_a(s_a, s_b, la);
 		la++;
 		lb--;
 	}
