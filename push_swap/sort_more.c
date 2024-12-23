@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:14:33 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 12:03:52 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/23 14:55:59 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_get_rxx_best(int rxx[], int rxx_b[])
 	ft_senario_one(rxx, b_rxx, &b_sum);
 	ft_senario(rxx, b_rxx, &b_sum, true);
 	ft_senario(rxx, b_rxx, &b_sum, false);
-	if (rxx_b[0] != -1 && b_sum > rxx_b[4])
+	if (rxx_b[0] != -1 && b_sum >= rxx_b[4])
 		return ;
 	ft_memcpy(rxx_b, b_rxx, 4 * sizeof(int));
 	rxx_b[4] = b_sum;
