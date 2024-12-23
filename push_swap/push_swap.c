@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 08:51:01 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 11:04:56 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:02:12 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int ac, char *av[])
 		return (0);
 	}
 	ft_sort_stack(&stack_a, &stack_b);
+	ft_print_stack(stack_a);
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);
 }

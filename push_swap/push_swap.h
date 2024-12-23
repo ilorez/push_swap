@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:35:08 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 11:43:57 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:06:33 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,16 @@ int		ft_get_min_pos(t_list *stack, int min);
 int		ft_get_pos_of(t_list *stack, int size, int n);
 
 // operations (allowed actions)
-void	ft_op_sx(t_list **stack); // sa sb
-void	ft_op_rx(t_list **stack); // ra rb
-void	ft_op_rrx(t_list **stack); // rrarrb
-void	ft_op_px(t_list **stack_a, t_list **stack_b); // pa pb
-void	ft_op_rxx(t_list **stack_a, t_list **stack_b, t_bool reverse);
+// sa sb
+void	ft_op_sx(t_list **stack);
+// ra rb
+void	ft_op_rx(t_list **stack);
+// rrarrb
+void	ft_op_rrx(t_list **stack);
+// pa pb
+void	ft_op_px(t_list **stack_a, t_list **stack_b);
 // call rx/rrx for stack A and B
+void	ft_op_rxx(t_list **stack_a, t_list **stack_b, t_bool reverse);
 
 // sort more
 t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size);
@@ -64,5 +68,5 @@ t_list	*ft_get_best_moves(t_list *s_a, t_list *s_b, int la, int lb);
 void	ft_return_to_stack_a(t_list **s_a, t_list **s_b, int la, int lb);
 void	ft_rotate_to_sort(t_list **stack, int size);
 t_list	*ft_create_oprs(int *rxx);
-int	ft_get_sum_rxx(int rxx[]);
+int		ft_get_sum_rxx(int rxx[]);
 #endif
