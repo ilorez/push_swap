@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 08:51:01 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 13:14:43 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/23 13:37:51 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int	main(int ac, char *av[])
 		return (0);
 	}
 	ft_sort_stack(&stack_a, &stack_b);
-	ft_print_stack(stack_a);
-  if (ft_is_sorted(stack_a, 1))
-    ft_printf("\e[38;2;0;255;0m it's sorted :c\n");
-  else
-    ft_printf("\e[38;2;255;0;0m it's Not sorted :c\n");
+	//ft_print_stack(stack_a);
+  //if (ft_is_sorted(stack_a, 1))
+  //  ft_printf("\e[38;2;0;255;0m it's sorted :c\n");
+  //else
+  //  ft_printf("\e[38;2;255;0;0m it's Not sorted :c\n");
 
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);

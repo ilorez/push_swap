@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:30:22 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 11:36:39 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/23 13:36:54 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_list	*ft_get_best_moves(t_list *s_a, t_list *s_b, int la, int lb)
 		rxx[2] = la - rxx[0];
 		rxx[3] = lb - rxx[1];
 		ft_get_rxx_best(rxx, rxx_best);
-		if (rxx_best[4] < 3)
+		if (rxx_best[4] == 1)
 			return (ft_create_oprs(rxx_best));
 		rxx[0]++;
 		s_a = s_a->next;
