@@ -29,18 +29,23 @@ RM = rm -f
 
 all: build
 
-build: $(OBJS)
+build: $(OBJS) make_libft
 	$(CC) $(FLAGS) $(OBJS) -I. -I$(INCLUDES_DR) -L$(LIBFT_DR) -lft -o $(BUILD_DR)/$(NAME)
 
 %.o: %.c
 	$(CC) $(FLAGS) -I. -I$(INCLUDES_DR) -c $< -o $@
+
+make_libft:
+	make -C $(LIBFT_DR) all
+	make -C $(LIBFT_DR) clean
 
 clean:
 	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(BUILD_DR)/$(NAME)
+	make -C $(LIBFT_DR) fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re build
+.PHONY: all clean fclean re build make_libft
