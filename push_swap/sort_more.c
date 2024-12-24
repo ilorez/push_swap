@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:14:33 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 16:06:13 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/24 11:33:53 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,67 @@ void	ft_get_rxx_best(int rxx[], int rxx_b[])
  * ft_sort_more
  *
  * */
+//t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size)
+//{
+//	t_list	*oprs;
+//	int		size_b;
+//
+//	ft_op_px(s_a, s_b);
+//	size_b = 1;
+//	ft_printf("pb\n");
+//	if (size > 4 && size--)
+//	{
+//		ft_printf("pb\n");
+//		ft_op_px(s_a, s_b);
+//    ft_sort_two(s_b, -1);
+//	}
+//	while (++size_b && --size > 5)
+//	{
+//    //ft_printf("stack A\n");
+//	  //ft_print_stack(*s_a);
+//    //ft_printf("stack B\n");
+//	  //ft_print_stack(*s_b);
+//		oprs = ft_get_best_moves(*s_a, *s_b, size, size_b);
+//		ft_run_oprs_lst(s_a, s_b, oprs);
+//		ft_lstclear(&oprs, free);
+//		if (ft_is_sorted(*s_a, 1))
+//			break ;
+//	}
+//  if (size == 5)
+//  {
+//	  ft_op_px(s_a, s_b);
+//	  ft_op_px(s_a, s_b);
+//	  ft_printf("pb\npb\n");
+//    size = 3;
+//    size_b = size_b + 2;
+//  }
+//	ft_sort_three(s_a);
+//  //ft_printf("stack A\n");
+//	//ft_print_stack(*s_a);
+//  //ft_printf("stack B\n");
+//	//ft_print_stack(*s_b);
+//	ft_return_to_stack_a(s_a, s_b, ft_lstsize(*s_a), ft_lstsize(*s_b));
+//	ft_rotate_to_sort(s_a, ft_lstsize(*s_a));
+//	return (1);
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size)
 {
 	t_list	*oprs;
@@ -85,22 +146,44 @@ t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size)
 	ft_op_px(s_a, s_b);
 	size_b = 1;
 	ft_printf("pb\n");
-	if (size > 4 && size--)
+	if (size-- >= 5 && size-- && size_b++)
 	{
 		ft_printf("pb\n");
 		ft_op_px(s_a, s_b);
+    ft_sort_two(s_b, -1);
 	}
-	while (--size > 3 && ++size_b)
+	while (size > 5 && size_b)
 	{
-		oprs = ft_get_best_moves(*s_a, *s_b, size, size_b);
+    //ft_printf("stack A\n");
+	  //ft_print_stack(*s_a);
+    //ft_printf("stack B\n");
+	  //ft_print_stack(*s_b);
+		oprs = ft_get_best_moves(*s_a, *s_b, size--, size_b++);
 		ft_run_oprs_lst(s_a, s_b, oprs);
 		ft_lstclear(&oprs, free);
 		if (ft_is_sorted(*s_a, 1))
 			break ;
 	}
+  if (!ft_is_sorted(*s_a, 1) && (size == 5 || size == 4))
+  {
+    if (size == 5)
+    {
+      ft_sort_two(s_a, 1);
+	    ft_op_px(s_a, s_b);
+	    ft_printf("pb\n");
+      size_b++;
+    }
+	  ft_op_px(s_a, s_b);
+	  ft_printf("pb\n");
+    size = 3;
+    size_b++;
+  }
 	ft_sort_three(s_a);
-  
-	//ft_return_to_stack_a(s_a, s_b, ft_lstsize(*s_a), ft_lstsize(*s_b));
-	//ft_rotate_to_sort(s_a, ft_lstsize(*s_a));
+  //ft_printf("stack A\n");
+	//ft_print_stack(*s_a);
+  //ft_printf("stack B\n");
+	//ft_print_stack(*s_b);
+	ft_return_to_stack_a(s_a, s_b, size, size_b);
+	ft_rotate_to_sort(s_a, ft_lstsize(*s_a));
 	return (1);
 }

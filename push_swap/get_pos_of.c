@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 13:22:17 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/22 15:07:49 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/24 09:04:25 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int	ft_get_pos_of(t_list *stack, int size, int n)
 	a = *(int *)stack->content;
 	b = *(int *)stack->next->content;
 	if (size == 2)
-		return ((int)ft_is_between(n, a, b));
+		return ((int)ft_is_between_desc(n, a, b));
 	order = ft_get_right_order(stack, a);
 	first = a;
 	return (_ft_get_pos(stack, n, order, first));

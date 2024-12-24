@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 09:35:04 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/22 15:15:58 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/24 09:23:19 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_bool	ft_sort_stack(t_list **s_a, t_list **s_b)
 		return (1);
 	size = ft_lstsize(*s_a);
 	if (size == 2)
-		ft_sort_two(s_a);
+		ft_sort_two(s_a, 1);
 	else if (size == 3)
 		ft_sort_three(s_a);
 	else
