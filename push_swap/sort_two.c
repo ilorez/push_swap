@@ -25,12 +25,12 @@ t_bool	ft_sort_two(t_list **stack, int order)
 		return (false);
 	ns[0] = *(int *)(*stack)->content;
 	ns[1] = *(int *)(*stack)->next->content;
-	if (order == 1 &&  ns[0] > ns[1])
+	if (order == 1 && ns[0] > ns[1])
 	{
 		ft_op_sx(stack);
 		ft_printf("sa\n");
 	}
-  else if (order == -1 &&  ns[1] > ns[0])
+	else if (order == -1 && ns[1] > ns[0])
 	{
 		ft_op_sx(stack);
 		ft_printf("sb\n");

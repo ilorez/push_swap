@@ -94,7 +94,7 @@ static void	ft_return_num_to_stack_a(t_list **s_a, t_list **s_b, int la)
 	num = *(int *)(*s_b)->content;
 	b_pos = ft_get_pos_of(*s_a, la, num);
 	if ((la - b_pos) <= b_pos)
-	  ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew((la - b_pos), RRA)));
+		ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew((la - b_pos), RRA)));
 	else
 		ft_lstadd_front(&oprs, ft_lstnew(ft_oprnew(b_pos, RA)));
 	ft_run_oprs_lst(s_a, s_b, oprs);
