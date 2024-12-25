@@ -39,7 +39,7 @@ MOBJS = ${SMANDATORY:.c=.o}
 
 BOBJS = ${SBONUS:.c=.o} 
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 NAME = libft.a
 
