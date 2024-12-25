@@ -22,7 +22,7 @@
 # endif
 
 // includes
-# include "./error_manager.h"
+# include "error_manager.h"
 
 // create stack
 t_bool	ft_create_stack(int ac, char **av, t_list **stack_a,

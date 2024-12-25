@@ -6,7 +6,7 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 16:06:17 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/16 15:30:33 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/25 15:08:19 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ MAN_SRCS = ft_printf.c ft_print_char.c ft_print_str.c \
 
 MAN_OBJS = $(MAN_SRCS:%.c=%.o)
 
-FLAGS = -Wall -Wextra -Werror 
+INCLUDE_DR = ../includes/
+FLAGS = -Wall -Wextra -Werror -g  -fsanitize=address -I$(INCLUDE_DR)
 NAME = libftprintf.a
 CC = cc
 AR = ar rc
@@ -31,8 +32,8 @@ $(NAME): $(MAN_OBJS)
 
 objs: ${MAN_OBJS} 
 
-%.o: %.c ft_printf.h
-	$(CC) $(FLAGS) -I. -c $< -o $@
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(MAN_OBJS)

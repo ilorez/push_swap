@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft/libft.h"
+#include "libft.h"
 #include "oprs.h"
 
 t_opr	*ft_oprnew(int times, t_operations type)

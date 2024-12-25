@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/includes/t_bool.h"
-#include "../libft/libft.h"
+#include "t_bool.h"
+#include "libft.h"
 #include "push_swap.h"
 
 int	ft_get_min_pos(t_list *stack, int min)

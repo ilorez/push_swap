@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/includes/t_bool.h"
-#include "../libft/libft.h"
+#include "t_bool.h"
+#include "libft.h"
 #include "push_swap.h"
 
 t_bool	ft_is_sorted(t_list *stack, int order)

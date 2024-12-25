@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/ft_printf/ft_printf.h"
-#include "../libft/includes/t_bool.h"
-#include "../libft/libft.h"
-#include "./lst_oprs/oprs.h"
+#include "ft_printf.h"
+#include "t_bool.h"
+#include "libft.h"
+#include "oprs.h"
 #include "push_swap.h"
 
 // s1: min(ra, rra) min(rb, rrb)

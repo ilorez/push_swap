@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/ft_printf/ft_printf.h"
-#include "../libft/includes/t_bool.h"
-#include "../libft/libft.h"
-#include "./lst_oprs/oprs.h"
+#include "ft_printf.h"
+#include "t_bool.h"
+#include "libft.h"
+#include "oprs.h"
 #include "push_swap.h"
 
 static void	_ft_get_oprs(int ns[], t_opr **op1, t_opr **op2)

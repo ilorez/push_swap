@@ -23,8 +23,7 @@ LIBFT_DR = ./libft
 NAME = push_swap
 
 BUILD_DR = ./build
-##BUILD_DR = .
-INCLUDES_DR = ./libft/includes
+INCLUDES_DRS = -I./includes -I./libft/includes
 CC = cc
 AR = ar rc
 RM = rm -f
@@ -32,10 +31,11 @@ RM = rm -f
 all: build
 
 build: $(OBJS) make_libft
-	$(CC) $(FLAGS) $(OBJS) -I. -I$(INCLUDES_DR) -L$(LIBFT_DR) -lft -o $(BUILD_DR)/$(NAME)
+	mkdir -p $(BUILD_DR)
+	$(CC) $(FLAGS) $(OBJS) $(INCLUDES_DRS) -L$(LIBFT_DR) -lft -o $(BUILD_DR)/$(NAME)
 
 %.o: %.c
-	$(CC) $(FLAGS) -I. -I$(INCLUDES_DR) -c $< -o $@
+	$(CC) $(FLAGS) $(INCLUDES_DRS) -c $< -o $@
 
 make_libft:
 	make -C $(LIBFT_DR) all

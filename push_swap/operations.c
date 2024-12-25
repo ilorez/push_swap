@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/includes/t_bool.h"
-#include "../libft/libft.h"
+#include "t_bool.h"
+#include "libft.h"
 #include "push_swap.h"
 
 // swap first two element in stack

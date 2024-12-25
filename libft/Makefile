@@ -39,9 +39,12 @@ MOBJS = ${SMANDATORY:.c=.o}
 
 BOBJS = ${SBONUS:.c=.o} 
 
-CFLAGS = -Wall -Wextra -Werror -g
 
 NAME = libft.a
+
+INCLUDE_DR = ./includes
+
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address -I$(INCLUDE_DR) 
 
 CC = cc
 
@@ -57,7 +60,7 @@ $(NAME):${MOBJS}
 	${LIBC} ${NAME} ${MOBJS}
 
 ${MOBJS}: ${SMANDATORY}
-	${CC} ${CFLAGS} -c ${SMANDATORY}
+	${CC} ${CFLAGS}  -c ${SMANDATORY}
 
 bonus: ${BOBJS}
 

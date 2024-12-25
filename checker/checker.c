@@ -12,9 +12,9 @@
 
 #include "./checker.h"
 #include "../push_swap/push_swap.h"
-#include "../libft/ft_printf/ft_printf.h"
-#include "../libft/includes/t_bool.h"
-#include "../libft/libft.h"
+#include "ft_printf.h"
+#include "t_bool.h"
+#include "libft.h"
 #include "../push_swap/error_manager.h"
 
 int	main(int ac, char *av[])

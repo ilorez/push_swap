@@ -6,7 +6,8 @@ B_SRCS = get_next_line_bonus.c \
 OBJS = $(SRCS:%.c=%.o) 
 B_OBJS = $(B_SRCS:%.c=%.o) 
 
-FLAGS = -Wall -Wextra -Werror 
+INCLUDES_DR = ../includes
+FLAGS = -Wall -Wextra -Werror -g -fsanitize=address -I${INCLUDES_DR}
 NAME = get_next_line.a
 B_NAME = get_next_line_bonus.a
 CC = cc
@@ -30,7 +31,7 @@ objs: ${OBJS}
 b_objs: ${B_OBJS}
 
 %.o: %.c
-	$(CC) $(FLAGS) -I. -c $< -o $@
+	$(CC) $(FLAGS)  -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

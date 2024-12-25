@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/ft_printf/ft_printf.h"
-#include "../libft/includes/t_bool.h"
-#include "../libft/libft.h"
-#include "./error_manager.h"
+#include "ft_printf.h"
+#include "t_bool.h"
+#include "libft.h"
+#include "error_manager.h"
 #include "push_swap.h"
 
 static t_bool	_ft_is_valid(char *str)

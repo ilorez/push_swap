@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/ft_printf/ft_printf.h"
-#include "../libft/includes/t_bool.h"
-#include "../libft/libft.h"
+#include "ft_printf.h"
+#include "t_bool.h"
+#include "libft.h"
 #include "push_swap.h"
 
 t_bool	ft_sort_two(t_list **stack, int order)

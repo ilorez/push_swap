@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/ft_printf/ft_printf.h"
-#include "../libft/libft.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_print_stack(t_list *stack)
 {
