@@ -44,7 +44,7 @@ NAME = libft.a
 
 INCLUDE_DR = ./includes
 
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address -I$(INCLUDE_DR) 
+CFLAGS = -Wall -Wextra -Werror -g  -I$(INCLUDE_DR) 
 
 CC = cc
 

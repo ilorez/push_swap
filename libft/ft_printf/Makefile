@@ -19,7 +19,7 @@ MAN_SRCS = ft_printf.c ft_print_char.c ft_print_str.c \
 MAN_OBJS = $(MAN_SRCS:%.c=%.o)
 
 INCLUDE_DR = ../includes/
-FLAGS = -Wall -Wextra -Werror -g  -fsanitize=address -I$(INCLUDE_DR)
+FLAGS = -Wall -Wextra -Werror -g   -I$(INCLUDE_DR)
 NAME = libftprintf.a
 CC = cc
 AR = ar rc
