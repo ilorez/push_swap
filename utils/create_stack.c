@@ -6,15 +6,12 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 18:03:46 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 10:39:04 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 16:07:09 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "t_bool.h"
 #include "libft.h"
-#include "error_manager.h"
-#include "push_swap.h"
+#include "ft_utils.h"
 
 static t_bool	_ft_is_valid(char *str)
 {

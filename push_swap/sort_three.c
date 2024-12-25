@@ -6,15 +6,14 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:22:45 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 11:22:47 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 15:48:36 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "t_bool.h"
 #include "libft.h"
 #include "oprs.h"
-#include "push_swap.h"
+#include "ft_utils.h"
 
 static void	_ft_get_oprs(int ns[], t_opr **op1, t_opr **op2)
 {
@@ -51,10 +50,7 @@ t_bool	ft_sort_three(t_list **stack)
 	op1 = ft_oprnew(1, NONE);
 	op2 = ft_oprnew(1, NONE);
 	if (!op1 || !op2)
-	{
-		ft_printf("Error\ncould not create operation\n");
 		return (false);
-	}
 	_ft_get_oprs(ns, &op1, &op2);
 	oprs = ft_lstnew(op2);
 	ft_lstadd_front(&oprs, ft_lstnew(op1));

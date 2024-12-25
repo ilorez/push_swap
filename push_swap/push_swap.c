@@ -6,14 +6,12 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 08:51:01 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/24 11:53:27 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 16:04:47 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "t_bool.h"
 #include "libft.h"
-#include "error_manager.h"
 #include "push_swap.h"
 
 int	main(int ac, char *av[])

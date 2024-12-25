@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:38:56 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 11:16:51 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 16:01:29 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "t_bool.h"
 #include "libft.h"
 #include "oprs.h"
-#include "push_swap.h"
+#include "ft_utils.h"
 
 static void	_ft_run_type(t_list **s_a, t_list **s_b, t_operations type)
 {

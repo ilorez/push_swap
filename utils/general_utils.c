@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   general_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:37:36 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 15:41:09 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 15:37:56 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "t_bool.h"
+#include "libft.h"
 
-t_bool	ft_is_between(int n, int a, int b)
+t_bool	ft_is_sorted(t_list *stack, int order)
 {
-	if ((a > b && n > b && n < a) || (a < b && n < b && n > a))
-		return (true);
-	return (false);
+	if (!stack)
+		return (0);
+	while (stack && stack->next)
+	{
+		if (*((int *)stack->content) * order > *((int *)stack->next->content)
+			* order)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
 
-t_bool	ft_is_between_desc(int n, int a, int b)
-{
-	if (a > b && n > b && n < a)
-		return (true);
-	return (false);
-}
