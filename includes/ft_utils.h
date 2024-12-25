@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 15:51:28 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 16:05:34 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 16:20:20 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 // includes
 # include "error_manager.h"
 # include "t_bool.h"
+# include "oprs.h"
 
 // create stack
 t_bool	ft_create_stack(int ac, char **av, t_list **stack_a,
@@ -33,8 +34,8 @@ t_bool	ft_create_stack(int ac, char **av, t_list **stack_a,
 // general utils
 t_bool	ft_is_sorted(t_list *stack, int order);
 
-// run operations
-t_bool	ft_run_oprs_lst(t_list **s_a, t_list **s_b, t_list *oprs_lst);
+// run type
+void	ft_run_type(t_list **s_a, t_list **s_b, t_operations type);
 
 // debugging
 int		ft_print_stack(t_list *stack);

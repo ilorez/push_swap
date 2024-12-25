@@ -6,14 +6,14 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:22:45 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 15:48:36 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 16:28:07 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "t_bool.h"
 #include "libft.h"
 #include "oprs.h"
-#include "ft_utils.h"
+#include "push_swap.h"
 
 static void	_ft_get_oprs(int ns[], t_opr **op1, t_opr **op2)
 {

@@ -6,7 +6,7 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 16:09:52 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/25 16:09:58 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/25 16:28:20 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS= ./push_swap/get_pos_of.c \
 			./push_swap/sort_more_utils.c \
 			./push_swap/sort_three.c \
 			./push_swap/sort_more_utils_two.c \
+			./push_swap/run_operations_lst.c \
 			./push_swap/sort_two.c
 
 UTILS_SRCS= ./utils/create_stack.c \
@@ -26,7 +27,7 @@ UTILS_SRCS= ./utils/create_stack.c \
 			./utils/general_utils.c \
 			./utils/error_manager.c \
 			./utils/operations.c \
-			./utils/run_oprations_lst.c \
+			./utils/run_type.c
 
 OBJS = $(SRCS:%.c=%.o)
 UTILS_OBJS = $(UTILS_SRCS:%.c=%.o)

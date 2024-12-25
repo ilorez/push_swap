@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:35:08 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 16:03:04 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 16:21:27 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ t_bool	ft_is_between_desc(int n, int a, int b);
 // get pos of
 int		ft_get_min_pos(t_list *stack, int min);
 int		ft_get_pos_of(t_list *stack, int size, int n);
+
+// run operations
+t_bool	ft_run_oprs_lst(t_list **s_a, t_list **s_b, t_list *oprs_lst);
 
 // sort more
 t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size);
