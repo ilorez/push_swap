@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 09:51:57 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 11:05:25 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 16:59:18 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef enum s_error_code
 	ERR_EMPTY_ARG,
 	ERR_OUT_INT_RANGE,
 	ERR_MALLOC_FAIL,
+  ERR_INVALID_OPERATION,
 	ERR_UNKNOWN,
 	ERR_COUNT
 }					t_error_code;

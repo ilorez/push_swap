@@ -6,7 +6,7 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 16:09:52 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/25 16:28:20 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/25 17:04:31 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,14 +29,19 @@ UTILS_SRCS= ./utils/create_stack.c \
 			./utils/operations.c \
 			./utils/run_type.c
 
+BONUS_SRCS= ./checker/checker.c \
+			./checker/get_type.c
+
 OBJS = $(SRCS:%.c=%.o)
 UTILS_OBJS = $(UTILS_SRCS:%.c=%.o)
+BONUS_OBJS = $(BONUS_SRCS:%.c=%.o)
 
 FLAGS = -Wall -Wextra -Werror -g
 
 LIBFT_DR = ./libft
 
 NAME = push_swap
+BONUS_NAME = checker
 
 BUILD_DR = ./build
 INCLUDES_DRS = -I./includes -I./libft/includes
@@ -44,11 +49,15 @@ CC = cc
 AR = ar rc
 RM = rm -f
 
-all: build
+all: mandatory bonus
 
-build: $(OBJS) $(UTILS_OBJS) make_libft
+mandatory: $(OBJS) $(UTILS_OBJS) make_libft
 	mkdir -p $(BUILD_DR)
 	$(CC) $(FLAGS) $(OBJS) $(UTILS_OBJS) $(INCLUDES_DRS) -L$(LIBFT_DR) -lft -o $(BUILD_DR)/$(NAME)
+
+bonus: $(BONUS_OBJS) $(UTILS_OBJS) make_libft
+	mkdir -p $(BUILD_DR)
+	$(CC) $(FLAGS) $(BONUS_OBJS) $(UTILS_OBJS) $(INCLUDES_DRS) -L$(LIBFT_DR) -lft -o $(BUILD_DR)/$(BONUS_NAME)
 
 %.o: %.c
 	$(CC) $(FLAGS) $(INCLUDES_DRS) -c $< -o $@
@@ -58,12 +67,13 @@ make_libft:
 	make -C $(LIBFT_DR) clean
 
 clean:
-	$(RM) $(OBJS) $(UTILS_OBJS)
+	$(RM) $(OBJS) $(UTILS_OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(BUILD_DR)/$(NAME)
+	$(RM) $(BUILD_DR)/$(BONUS_NAME)
 	make -C $(LIBFT_DR) fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re build make_libft
+.PHONY: all clean fclean re make_libft mandatory bonus

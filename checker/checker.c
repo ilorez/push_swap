@@ -6,16 +6,14 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 19:35:29 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/24 21:02:05 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 17:00:36 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./checker.h"
-#include "../push_swap/push_swap.h"
+#include "checker.h"
 #include "ft_printf.h"
-#include "t_bool.h"
 #include "libft.h"
-#include "../push_swap/error_manager.h"
+#include "get_next_line.h"
 
 int	main(int ac, char *av[])
 {
@@ -23,7 +21,7 @@ int	main(int ac, char *av[])
 	t_list			*stack_b;
   char    *opr;
 	t_error_code	err_code;
-  t_oprations type;
+  t_operations type;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -38,25 +36,23 @@ int	main(int ac, char *av[])
 		ft_lstclear(&stack_a, free);
 		return (0);
 	}
-  // read operations from input using get next line and run one by one without createing
-  // list because you don't need that
-  // use strcmp to find the operation if not found
-  // stop program and show error
-  // after get command you just send it to run type 
-  // after don
-  //
 	err_code = ERR_SUCCESS;
-  while (opr = get_next_line(0))
+  opr = get_next_line(0);
+  while (opr)
   {
-    type = get_operation_type(opr);
+    type = ft_get_type(opr);
     if (!type)
     {
 	    err_code = ERR_INVALID_OPERATION;
+
       break;
     }
-    ft_run_type(s_a, s_b, type);
+
+    ft_run_type(&stack_a, &stack_b, type);
     free(opr);
+    opr = get_next_line(0);
   }
+  free(opr);
   if (err_code)
   {
 		ft_print_error(err_code);
