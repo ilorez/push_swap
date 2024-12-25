@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 19:35:29 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 17:00:36 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/25 18:35:52 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ int	main(int ac, char *av[])
   //  return (0);
   //}
   if (ft_is_sorted(stack_a, 1))
-    ft_printf("\e[38;2;0;255;0m it's sorted :c\n");
+    ft_printf("\e[38;2;0;255;0m OK :>\n");
   else
-    ft_printf("\e[38;2;255;0;0m it's Not sorted :c\n");
+    ft_printf("\e[38;2;255;0;0m KO :c\n");
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);
 }

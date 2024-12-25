@@ -36,12 +36,12 @@ void use_after_scope() {
 
 int main() {
    
-   //stack_overflow();
-   //memory_leak();
+   stack_overflow();
+  // memory_leak();
    //double_free();
    //int *bad_ptr = use_after_return();
    //printf("%d\n", *bad_ptr);
-   use_after_scope();
+   //use_after_scope();
 
    return 0;
 }
