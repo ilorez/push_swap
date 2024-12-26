@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 18:03:46 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/26 10:28:34 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:44:49 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ static t_bool	_ft_loop_nums(char **str_nums, t_list **s, t_error_code *e_c)
 		if (_ft_is_dup(*s, new_num))
 		{
 			*e_c = ERR_DUPLICATED_ARG;
+		  ft_lstdelone(new_num, free);
 			return ((t_bool)ft_free_str_lst(str_nums));
 		}
 		ft_lstadd_back(s, new_num);
