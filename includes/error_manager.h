@@ -6,14 +6,14 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 09:51:57 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/26 09:25:40 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/26 13:01:49 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_MANAGER_H
 # define ERROR_MANAGER_H
 
-# include <unistd.h>
+# include "libft.h"
 
 // t_error_code enum
 typedef enum s_error_code
@@ -34,8 +34,7 @@ typedef enum s_error_code
 typedef struct t_error_message
 {
 	t_error_code	code;
-	const char		*message;
-	int				length;
+	char		*message;
 }					t_error_message;
 
 // Function declarations
