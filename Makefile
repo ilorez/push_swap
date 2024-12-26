@@ -6,7 +6,7 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 16:09:52 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/26 13:10:03 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/26 15:18:18 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ CC = cc
 AR = ar rc
 RM = rm -f
 
-all: mandatory bonus
+all: mandatory # bonus
 
 mandatory: $(OBJS) $(UTILS_OBJS) make_libft
 	mkdir -p $(BUILD_DR)
