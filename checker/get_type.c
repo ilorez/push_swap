@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 16:43:37 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 18:39:30 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:48:30 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_operations ft_get_type(char *line)
     }
     i++;
   }
-  ft_printf("------ the invalid operation is: %s\n", line);
   ft_free_str_lst(commands);
   return (0);
 }
