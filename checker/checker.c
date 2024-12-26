@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 19:35:29 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/26 13:25:49 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/26 13:32:11 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	ft_read_run_oprs(t_list **s_a, t_list **s_b, t_error_code err)
 		if (!type)
 		{
 			err = ERR_INVALID_OPERATION;
-			free(line);
 			break ;
 		}
 		ft_run_type(s_a, s_b, type);
