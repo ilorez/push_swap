@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 09:48:41 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 16:58:35 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:29:41 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	ft_print_error(t_error_code error_code)
 		"Error\nan allocation failed\n", 27};
   error_messages[ERR_INVALID_OPERATION] = (t_error_message){ERR_INVALID_OPERATION,
 		"Error\nfound invalid operation\n", 30};
+  error_messages[ERR_STACK_B_NOT_EMPTY] = (t_error_message){ERR_STACK_B_NOT_EMPTY,
+		"Error\nstack B not empty\n", 24};
 	error_messages[ERR_UNKNOWN] = (t_error_message){ERR_UNKNOWN,
 		"Error\nUnknown error occurred\n", 29};
 	if (error_code < 0 || error_code >= ERR_COUNT)

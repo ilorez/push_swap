@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 18:03:46 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 16:07:09 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:28:34 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ t_bool	ft_create_stack(int ac, char **av, t_list **stack,
 	j = 1;
 	while (--ac > 0)
 	{
-		if (av[j][0] == 0)
+		if (ft_is_str_chars_same(av[j], ' '))
 		{
 			*err_code = ERR_EMPTY_ARG;
 			return (false);
