@@ -28,10 +28,10 @@ int	ft_read_run_oprs(t_list **s_a, t_list **s_b, t_error_code err)
 	t_operations	type;
 	char			*line;
 
-  line = get_next_line(0);
+	line = get_next_line(0);
 	while (line)
 	{
-    type = ft_get_type(line);
+		type = ft_get_type(line);
 		if (!type)
 		{
 			err = ERR_INVALID_OPERATION;
@@ -39,14 +39,14 @@ int	ft_read_run_oprs(t_list **s_a, t_list **s_b, t_error_code err)
 		}
 		ft_run_type(s_a, s_b, type);
 		free(line);
-    line = get_next_line(0);
+		line = get_next_line(0);
 	}
-  free(line);
+	free(line);
 	if (!err && ft_lstsize(*s_b) != 0)
 		err = ERR_STACK_B_NOT_EMPTY;
 	if (err)
 		return (ft_found_err(s_a, s_b, err));
-  return (1);
+	return (1);
 }
 
 int	main(int ac, char *av[])
@@ -66,12 +66,12 @@ int	main(int ac, char *av[])
 	if (err_code)
 		return (ft_found_err(&stack_a, &stack_b, err_code));
 	if (!ft_read_run_oprs(&stack_a, &stack_b, err_code))
-    return (0);
-  if (ft_is_sorted(stack_a, 1))
+		return (0);
+	if (ft_is_sorted(stack_a, 1))
 		ft_printf("\e[38;2;0;255;0mOK\n");
 	else
 		ft_printf("\e[38;2;255;0;0mKO\n");
-  ft_lstclear(&stack_a, free);
+	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);
 	return (0);
 }

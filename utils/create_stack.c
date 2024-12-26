@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_utils.h"
+#include "libft.h"
 
 static t_bool	_ft_is_valid(char *str)
 {
@@ -80,7 +80,7 @@ static t_bool	_ft_loop_nums(char **str_nums, t_list **s, t_error_code *e_c)
 		if (_ft_is_dup(*s, new_num))
 		{
 			*e_c = ERR_DUPLICATED_ARG;
-		  ft_lstdelone(new_num, free);
+			ft_lstdelone(new_num, free);
 			return ((t_bool)ft_free_str_lst(str_nums));
 		}
 		ft_lstadd_back(s, new_num);

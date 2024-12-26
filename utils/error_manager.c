@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 09:48:41 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/26 12:59:44 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/26 13:37:59 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void	ft_print_error(t_error_code error_code)
 		"Error\nfound a number out of int range\n"};
 	error_messages[ERR_MALLOC_FAIL] = (t_error_message){ERR_MALLOC_FAIL,
 		"Error\nan allocation failed\n"};
-  error_messages[ERR_INVALID_OPERATION] = (t_error_message){ERR_INVALID_OPERATION,
+	error_messages[ERR_INVALID_OPERATION] = (t_error_message){ERR_INVALID_OPERATION,
 		"Error\nfound invalid operation\n"};
-  error_messages[ERR_STACK_B_NOT_EMPTY] = (t_error_message){ERR_STACK_B_NOT_EMPTY,
+	error_messages[ERR_STACK_B_NOT_EMPTY] = (t_error_message){ERR_STACK_B_NOT_EMPTY,
 		"Error\nstack B not empty\n"};
 	error_messages[ERR_UNKNOWN] = (t_error_message){ERR_UNKNOWN,
 		"Error\nUnknown error occurred\n"};
 	if (error_code < 0 || error_code >= ERR_COUNT)
 		error_code = ERR_UNKNOWN;
-  ft_putstr_fd(error_messages[error_code].message, 2);
+	ft_putstr_fd(error_messages[error_code].message, 2);
 }
 
 /*#include <unistd.h>

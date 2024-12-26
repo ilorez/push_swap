@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "t_bool.h"
 #include "libft.h"
+#include "t_bool.h"
 
 t_bool	ft_is_sorted(t_list *stack, int order)
 {
@@ -26,4 +26,3 @@ t_bool	ft_is_sorted(t_list *stack, int order)
 	}
 	return (1);
 }
-
