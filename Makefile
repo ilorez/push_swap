@@ -6,7 +6,7 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 16:09:52 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/26 08:28:34 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/26 08:32:52 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,12 +67,11 @@ make_libft:
 
 clean:
 	$(RM) $(OBJS) $(UTILS_OBJS) $(BONUS_OBJS)
-	make -C $(LIBFT_DR) clean
+	make -C $(LIBFT_DR) fclean
 
 fclean: clean
 	$(RM) $(BUILD_DR)/$(NAME)
 	$(RM) $(BUILD_DR)/$(BONUS_NAME)
-	make -C $(LIBFT_DR) fclean
 
 re: fclean all
 
