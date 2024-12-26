@@ -13,7 +13,6 @@
 #ifndef FT_UTILS_H
 # define FT_UTILS_H
 
-
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
@@ -24,9 +23,9 @@
 
 // includes
 # include "error_manager.h"
-# include "t_bool.h"
-# include "oprs.h"
 # include "libft.h"
+# include "oprs.h"
+# include "t_bool.h"
 
 // create stack
 t_bool	ft_create_stack(int ac, char **av, t_list **stack_a,
@@ -55,4 +54,3 @@ void	ft_op_rxx(t_list **stack_a, t_list **stack_b, t_bool reverse);
 
 t_list	*ft_create_oprs(int *rxx);
 #endif
-

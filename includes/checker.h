@@ -16,6 +16,6 @@
 // includes
 # include "ft_utils.h"
 
-t_operations ft_get_type(char *line);
+t_operations	ft_get_type(char *line);
 
 #endif

@@ -24,8 +24,8 @@ typedef enum s_error_code
 	ERR_EMPTY_ARG,
 	ERR_OUT_INT_RANGE,
 	ERR_MALLOC_FAIL,
-  ERR_INVALID_OPERATION,
-  ERR_STACK_B_NOT_EMPTY,
+	ERR_INVALID_OPERATION,
+	ERR_STACK_B_NOT_EMPTY,
 	ERR_UNKNOWN,
 	ERR_COUNT
 }					t_error_code;
@@ -34,7 +34,7 @@ typedef enum s_error_code
 typedef struct t_error_message
 {
 	t_error_code	code;
-	char		*message;
+	char			*message;
 }					t_error_message;
 
 // Function declarations
