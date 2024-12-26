@@ -6,7 +6,7 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 16:09:52 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/25 18:30:50 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/26 08:28:34 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,10 +64,10 @@ bonus: $(BONUS_OBJS) $(UTILS_OBJS) make_libft
 
 make_libft:
 	make -C $(LIBFT_DR) all
-	make -C $(LIBFT_DR) clean
 
 clean:
 	$(RM) $(OBJS) $(UTILS_OBJS) $(BONUS_OBJS)
+	make -C $(LIBFT_DR) clean
 
 fclean: clean
 	$(RM) $(BUILD_DR)/$(NAME)
