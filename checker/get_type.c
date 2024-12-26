@@ -14,26 +14,26 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-t_operations ft_get_type(char *line)
+t_operations	ft_get_type(char *line)
 {
-  char	*str;
+	char	*str;
 	char	**commands;
-  int i;
+	int		i;
 
 	str = "sa\n:sb\n:pa\n:pb\n:ra\n:rb\n:rr\n:rra\n:rrb\n:rrr\n";
 	commands = ft_split(str, ':');
-  if (!commands)
-    return (0);
-  i = 0;
-  while (commands[i])
-  {
-    if (!ft_strncmp(line, commands[i], ft_strlen(line)))
-    {
-      ft_free_str_lst(commands);
-      return (i + 1);
-    }
-    i++;
-  }
-  ft_free_str_lst(commands);
-  return (0);
+	if (!commands)
+		return (0);
+	i = 0;
+	while (commands[i])
+	{
+		if (!ft_strncmp(line, commands[i], ft_strlen(line)))
+		{
+			ft_free_str_lst(commands);
+			return (i + 1);
+		}
+		i++;
+	}
+	ft_free_str_lst(commands);
+	return (0);
 }
