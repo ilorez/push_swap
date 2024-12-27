@@ -6,7 +6,7 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 16:09:52 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/27 11:38:48 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/27 15:06:09 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,6 @@ SRCS= get_pos_of.c \
 			sort_two.c
 
 UTILS_SRCS= create_stack.c \
-			debugging.c \
 			oprs.c \
 			general_utils.c \
 			error_manager.c \

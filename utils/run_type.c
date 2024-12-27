@@ -6,11 +6,10 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:38:56 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 16:23:11 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:03:51 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_utils.h"
 
 void	ft_run_type(t_list **s_a, t_list **s_b, t_operations type)

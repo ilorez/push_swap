@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 15:51:28 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 16:53:41 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:06:28 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_bool	ft_is_sorted(t_list *stack, int order);
 void	ft_run_type(t_list **s_a, t_list **s_b, t_operations type);
 
 // debugging
-int		ft_print_stack(t_list *stack);
+//int		ft_print_stack(t_list *stack);
 
 // operations (allowed actions)
 // sa sb
