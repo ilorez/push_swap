@@ -6,73 +6,78 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 16:09:52 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/26 15:18:18 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/27 11:38:48 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS= ./push_swap/get_pos_of.c \
-			./push_swap/push_swap.c \
-			./push_swap/sort_more.c \
-			./push_swap/sort_stack.c \
-			./push_swap/push_swap_utils.c \
-			./push_swap/sort_more_utils.c \
-			./push_swap/sort_three.c \
-			./push_swap/sort_more_utils_two.c \
-			./push_swap/run_operations_lst.c \
-			./push_swap/sort_two.c
+vpath %.c bonus
+vpath %.c srcs
+vpath %.c utils
 
-UTILS_SRCS= ./utils/create_stack.c \
-			./utils/debugging.c \
-			./utils/lst_oprs/oprs.c \
-			./utils/general_utils.c \
-			./utils/error_manager.c \
-			./utils/operations.c \
-			./utils/run_type.c
-
-BONUS_SRCS= ./checker/checker.c \
-			./checker/get_type.c
-
-OBJS = $(SRCS:%.c=%.o)
-UTILS_OBJS = $(UTILS_SRCS:%.c=%.o)
-BONUS_OBJS = $(BONUS_SRCS:%.c=%.o)
-
-FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
-
-LIBFT_DR = ./libft
-
+BUILD_DR = ./build
 NAME = push_swap
 BONUS_NAME = checker
 
-BUILD_DR = ./build
+LIBFT_DR = ./libft
+
+FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 INCLUDES_DRS = -I./includes -I./libft/includes
 CC = cc
 AR = ar rc
 RM = rm -f
 
-all: mandatory # bonus
+SRCS= get_pos_of.c \
+			push_swap.c \
+			sort_more.c \
+			sort_stack.c \
+			push_swap_utils.c \
+			sort_more_utils.c \
+			sort_three.c \
+			sort_more_utils_two.c \
+			run_operations_lst.c \
+			sort_two.c
 
-mandatory: $(OBJS) $(UTILS_OBJS) make_libft
-	mkdir -p $(BUILD_DR)
-	$(CC) $(FLAGS) $(OBJS) $(UTILS_OBJS) $(INCLUDES_DRS) -L$(LIBFT_DR) -lft -o $(BUILD_DR)/$(NAME)
+UTILS_SRCS= create_stack.c \
+			debugging.c \
+			oprs.c \
+			general_utils.c \
+			error_manager.c \
+			operations.c \
+			run_type.c
 
-bonus: $(BONUS_OBJS) $(UTILS_OBJS) make_libft
-	mkdir -p $(BUILD_DR)
-	$(CC) $(FLAGS) $(BONUS_OBJS) $(UTILS_OBJS) $(INCLUDES_DRS) -L$(LIBFT_DR) -lft -o $(BUILD_DR)/$(BONUS_NAME)
+BONUS_SRCS= checker.c \
+			get_type.c
+
+OBJS = $(SRCS:%.c=%.o)
+UTILS_OBJS = $(UTILS_SRCS:%.c=%.o)
+BONUS_OBJS = $(BONUS_SRCS:%.c=%.o)
+
+all: $(NAME)
 
 %.o: %.c
 	$(CC) $(FLAGS) $(INCLUDES_DRS) -c $< -o $@
 
-make_libft:
-	make -C $(LIBFT_DR) all
+$(NAME): $(OBJS) $(UTILS_OBJS)
+	make -C $(LIBFT_DR)
+	$(CC) $(FLAGS) $(OBJS) $(UTILS_OBJS) $(INCLUDES_DRS) $(LIBFT_DR)/libft.a -o $(NAME)
+
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(BONUS_OBJS) $(UTILS_OBJS)
+	make -C $(LIBFT_DR)
+	$(CC) $(FLAGS) $(BONUS_OBJS) $(UTILS_OBJS) $(INCLUDES_DRS) $(LIBFT_DR)/libft.a -o $(BONUS_NAME)
+
+$(BUILD_DR):
+	mkdir -p $@
 
 clean:
 	$(RM) $(OBJS) $(UTILS_OBJS) $(BONUS_OBJS)
 	make -C $(LIBFT_DR) fclean
 
 fclean: clean
-	$(RM) $(BUILD_DR)/$(NAME)
-	$(RM) $(BUILD_DR)/$(BONUS_NAME)
+	$(RM) $(NAME)
+	$(RM) $(BONUS_NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re make_libft mandatory bonus
+.PHONY: all clean fclean re bonus
