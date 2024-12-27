@@ -87,5 +87,79 @@ After completing stack A, I started coding the allowed operations one by one, te
 
 For each of these operations, I implemented them as functions and tested them individually to ensure they performed correctly in various scenarios.  
 
+### Step 10 - Final Step  
+At this stage, I applied the algorithm I created. My approach involved dividing the process into two parts:  
+
+1. **Sort Three**  
+   This function handles sorting three numbers by evaluating six possible permutations.  
+
+2. **Sort More**  
+   For sorting more than three numbers, I adapted the [Turk Algorithm](https://medium.com/@ayogun/push-swap-c1f5d2d41e97) with some modifications:  
+   - **First Change:**  
+     Instead of waiting until there are only three elements left in stack A, I stopped at five elements. At this point, I sorted the top two elements in stack A (from smallest to largest) and pushed them to stack B. Afterward, I used the same algorithm to return all elements from stack B to stack A.  
+     > *This adjustment reduced the average number of operations for 500 numbers by 50 to 200 operations.*  
+   
+   - **Second Change:**  
+     I modified the calculation function. The original Turk algorithm calculates the minimum number of operations to place a number from stack A in the correct position in stack B using this formula:  
+     `MIN(RA, RRA) + MIN(RB, RRB)`  
+
+     While effective, it doesn’t explore additional scenarios. I introduced three scenarios:  
+     1. **Original Scenario:**  
+        `MIN(RA, RRA) + MIN(RB, RRB)`  
+     2. **Combined Rotations (RR):**  
+        Use `RA` and `RB` to form `RR` and minimize the remaining rotations (`RA` or `RB`).  
+     3. **Combined Reverse Rotations (RRR):**  
+        Use `RRA` and `RRB` to form `RRR` and minimize the remaining reverse rotations (`RRA` or `RRB`).  
+
+     #### Example:  
+     Imagine stack A requires:  
+     - `1 RA` or `2 RRA`  
+     And stack B requires:  
+     - `3 RB` or `2 RRB`  
+
+     Using the scenarios:  
+     - **Scenario 1:**  
+       `1 RA + 2 RRB = 3 operations`  
+     - **Scenario 2:**  
+       `1 RA + 3 RB = 3 operations`  
+     - **Scenario 3:**  
+       `2 RRA + 2 RRB = 2 RRR = 2 operations`  
+
+     Replacing these small numbers with larger ones (e.g., 100, 200, 300), the performance difference becomes significant.  
+
+This step took approximately 5 to 8 days.  
+
+### Step 11 - Debugging and Optimization  
+After completing the implementation, I focused on fixing errors and memory leaks. Here are some recommendations:  
+- Use `-fsanitize` for debugging.  
+- Fix Norminette errors.  
+- Organize files for better structure.  
+
+I also updated my basic Makefile to an advanced version.  
+
+### Step 12 - Bonus  
+The bonus part was straightforward. I reused several functions from the mandatory part and incorporated `get_next_line` from `libft`.  
+
+#### Key Addition:  
+I added the `get_operation` function.  
+- This function reads a line, verifies if it is a valid operation, and returns it.  
+- The returned operation is passed to a `run_operation` function, which executes it.  
+- At the end, the program checks if stack A is sorted and stack B is empty.  
+
+### Step 13 - Handling Errors  
+
+1. **Invalid Arguments:**  
+   - Examples:  
+     - `" "`  
+     - `"     "`  
+     - `+`  
+
+2. **Duplicates:**  
+   - Examples:  
+     - `0` and `-00000000`  
+
+3. **Checker Behavior:**  
+   - If stack B is not empty, the program should display `KO`.  
+   - Invalid operations should display `Error`.  
 
 <!--https://www.tldraw.com/r/EgvfDvK-lGUgWZVgDT-3V?d=v-2934.-2479.1530.743.Ym7L05aVdUrCR4WmWzNFc-->
