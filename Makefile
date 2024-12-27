@@ -6,7 +6,7 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 16:09:52 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/27 15:06:09 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/27 15:41:59 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ vpath %.c bonus
 vpath %.c srcs
 vpath %.c utils
 
-BUILD_DR = ./build
+BUILD_DR = ./build/
 NAME = push_swap
 BONUS_NAME = checker
 
 LIBFT_DR = ./libft
 
-FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+FLAGS = -Wall -Wextra -Werror
 INCLUDES_DRS = -I./includes -I./libft/includes
 CC = cc
 AR = ar rc
@@ -47,13 +47,14 @@ UTILS_SRCS= create_stack.c \
 BONUS_SRCS= checker.c \
 			get_type.c
 
-OBJS = $(SRCS:%.c=%.o)
-UTILS_OBJS = $(UTILS_SRCS:%.c=%.o)
-BONUS_OBJS = $(BONUS_SRCS:%.c=%.o)
+
+OBJS = $(addprefix $(BUILD_DR),$(SRCS:%.c=%.o))
+UTILS_OBJS = $(addprefix $(BUILD_DR),$(UTILS_SRCS:%.c=%.o))
+BONUS_OBJS = $(addprefix $(BUILD_DR),$(BONUS_SRCS:%.c=%.o))
 
 all: $(NAME)
 
-%.o: %.c
+$(BUILD_DR)%.o: %.c
 	$(CC) $(FLAGS) $(INCLUDES_DRS) -c $< -o $@
 
 $(NAME): $(OBJS) $(UTILS_OBJS)
