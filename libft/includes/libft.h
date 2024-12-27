@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:06:37 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/26 10:26:28 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/27 10:37:15 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "get_next_line.h"
+# include "ft_printf.h"
 
 // structure
 typedef struct s_list

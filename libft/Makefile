@@ -1,23 +1,14 @@
 
-FT_PRINTF = ./ft_printf
-NAME_FT_PRINTF = libftprintf.a
-
-OBJS_FT_PRINTF= ${FT_PRINTF}/ft_printf.o \
-						${FT_PRINTF}/ft_print_char.o \
-						${FT_PRINTF}/ft_print_str.o \
-						${FT_PRINTF}/ft_print_ptr.o \
-						${FT_PRINTF}/ft_print_nbr.o \
-						${FT_PRINTF}/ft_print_unsigned_nbr.o \
-						${FT_PRINTF}/ft_print_hexa.o
-
-GET_NEXT_LINE = ./get_next_line/
-NAME_GET_NEXT_LINE = get_next_line.a
-
-OBJS_GET_NEXT_LINE = ${GET_NEXT_LINE}/get_next_line.o \
-									${GET_NEXT_LINE}/get_next_line_utils.o
+NAME = libft.a
+INCLUDE_DR = ./includes
+CFLAGS = -Wall -Wextra -Werror -I$(INCLUDE_DR) 
+CC = cc
+LIBC = ar -rcs
+RM = rm -f
 
 
-SMANDATORY = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+
+SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
        ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c \
        ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c \
        ft_calloc.c ft_strdup.c ft_toupper.c ft_tolower.c \
@@ -27,66 +18,34 @@ SMANDATORY = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
        ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
        ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 			 ft_isspace.c ft_free_str_lst.c ft_atol.c \
-			 ft_is_str_chars_same.c
+			 ft_is_str_chars_same.c \
+			 ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
+			 ft_lstsize_bonus.c ft_lstlast_bonus.c \
+			 ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+			 ft_lstclear_bonus.c ft_lstiter_bonus.c \
+			 ft_lstmap_bonus.c \
+			 ft_printf.c ft_print_char.c ft_print_str.c \
+			 ft_print_ptr.c ft_print_nbr.c \
+			 ft_print_unsigned_nbr.c \
+			 ft_print_hexa.c get_next_line.c \
+			 get_next_line_utils.c
 
+OBJS	= $(SRCS:.c=.o)
 
-SBONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
-	ft_lstsize_bonus.c ft_lstlast_bonus.c \
-	ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-	ft_lstclear_bonus.c ft_lstiter_bonus.c \
-	ft_lstmap_bonus.c 
+all: $(NAME)
 
-MOBJS = ${SMANDATORY:.c=.o}
+$(NAME):${OBJS}
+	${LIBC} ${NAME} ${OBJS}
 
-BOBJS = ${SBONUS:.c=.o} 
-
-
-NAME = libft.a
-
-INCLUDE_DR = ./includes
-
-CFLAGS = -Wall -Wextra -Werror -g  -I$(INCLUDE_DR) 
-
-CC = cc
-
-LIBC = ar rcs
-
-RM = rm -f
-
-all: mandaory bonus printf get_next_line
-
-mandaory: ${NAME}
-
-$(NAME):${MOBJS}
-	${LIBC} ${NAME} ${MOBJS}
-
-${MOBJS}: ${SMANDATORY}
-	${CC} ${CFLAGS}  -c ${SMANDATORY}
-
-bonus: ${BOBJS}
-
-${BOBJS}: ${SBONUS}
-	${CC} ${CFLAGS} -c ${SBONUS}
-	${LIBC} ${NAME} ${BOBJS}
-
-printf:
-	make -C ${FT_PRINTF} objs
-	${LIBC} ${NAME} ${OBJS_FT_PRINTF}
-
-get_next_line:
-	make -C ${GET_NEXT_LINE} objs
-	${LIBC} ${NAME} ${OBJS_GET_NEXT_LINE}
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	${RM} ${MOBJS} ${BOBJS}
-	make -C ${FT_PRINTF} clean
-	make -C ${GET_NEXT_LINE} clean
+	${RM} ${OBJS}
 
 fclean: clean
 	${RM} ${NAME}
-	make -C ${FT_PRINTF} fclean
-	make -C ${GET_NEXT_LINE} fclean
 
 re: fclean all
 
-.PHONY : all clean fclean re bonus printf mandaory get_next_line
+.PHONY : all clean fclean re
