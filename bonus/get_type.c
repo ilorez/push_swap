@@ -6,13 +6,11 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 16:43:37 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/26 10:48:30 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:11:23 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include "ft_printf.h"
-#include "libft.h"
 
 t_operations	ft_get_type(char *line)
 {

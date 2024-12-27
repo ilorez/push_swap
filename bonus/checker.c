@@ -6,14 +6,11 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 19:35:29 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/26 13:32:11 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:09:33 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include "ft_printf.h"
-#include "get_next_line.h"
-#include "libft.h"
 
 int	ft_found_err(t_list **s_a, t_list **s_b, t_error_code err)
 {

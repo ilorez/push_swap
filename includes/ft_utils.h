@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 15:51:28 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/27 15:06:28 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:11:07 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # include "libft.h"
 # include "oprs.h"
 # include "t_bool.h"
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 // create stack
 t_bool	ft_create_stack(int ac, char **av, t_list **stack_a,
