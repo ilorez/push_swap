@@ -6,7 +6,7 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 16:09:52 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/27 15:41:59 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/27 15:49:24 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ BONUS_OBJS = $(addprefix $(BUILD_DR),$(BONUS_SRCS:%.c=%.o))
 
 all: $(NAME)
 
-$(BUILD_DR)%.o: %.c
+$(BUILD_DR)%.o: %.c | $(BUILD_DR)
 	$(CC) $(FLAGS) $(INCLUDES_DRS) -c $< -o $@
 
 $(NAME): $(OBJS) $(UTILS_OBJS)
