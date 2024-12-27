@@ -97,7 +97,7 @@ At this stage, I applied the algorithm I created. My approach involved dividing 
    For sorting more than three numbers, I adapted the [Turk Algorithm](https://medium.com/@ayogun/push-swap-c1f5d2d41e97) with some modifications:  
    - **First Change:**  
      Instead of waiting until there are only three elements left in stack A, I stopped at five elements. At this point, I sorted the top two elements in stack A (from smallest to largest) and pushed them to stack B. Afterward, I used the same algorithm to return all elements from stack B to stack A.  
-     > *This adjustment reduced the average number of operations for 500 numbers by 50 to 200 operations.*  
+     > *This adjustment reduced the average number of operations for 500 numbers by 50 to 200 operations in some cases.*  
    
    - **Second Change:**  
      I modified the calculation function. The original Turk algorithm calculates the minimum number of operations to place a number from stack A in the correct position in stack B using this formula:  
