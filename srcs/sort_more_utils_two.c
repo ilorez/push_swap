@@ -6,14 +6,10 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:34:59 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 15:54:55 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/27 14:55:22 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "t_bool.h"
-#include "libft.h"
-#include "oprs.h"
 #include "push_swap.h"
 
 int	ft_get_sum_rxx(int rxx[])

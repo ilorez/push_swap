@@ -6,14 +6,10 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:30:22 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/23 14:30:41 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/27 14:56:08 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "t_bool.h"
-#include "libft.h"
-#include "oprs.h"
 #include "push_swap.h"
 
 // rxx:

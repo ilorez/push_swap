@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:35:08 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/25 16:21:27 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/27 14:53:56 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 // includes
 # include "ft_utils.h"
+# include "oprs.h"
+# include "libft.h"
+# include "t_bool.h"
 
 // sort
 t_bool	ft_sort_stack(t_list **stack_a, t_list **stack_b);
