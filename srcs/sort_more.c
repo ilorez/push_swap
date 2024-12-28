@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:14:33 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/27 14:55:10 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/28 18:23:44 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,21 +69,14 @@ void	ft_get_rxx_best(int rxx[], int rxx_b[])
 	rxx_b[4] = b_sum;
 }
 
-static void	ft_golden_five(t_list **s_a, t_list **s_b, int *size, int *size_b)
+static void	ft_golden_nums(t_list **s_a, t_list **s_b, int *size, int *size_b)
 {
-	if (!ft_is_sorted(*s_a, 1) && (*size == 5 || *size == 4))
+	while (!ft_is_sorted(*s_a, 1) && *size > 3)
 	{
-		if (*size == 5)
-		{
-			ft_sort_two(s_a, 1);
-			ft_op_px(s_a, s_b);
-			ft_printf("pb\n");
-			(*size_b)++;
-		}
 		ft_op_px(s_a, s_b);
 		ft_printf("pb\n");
-		*size = 3;
 		(*size_b)++;
+		(*size)--;
 	}
 }
 
@@ -105,7 +98,7 @@ t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size)
 		ft_op_px(s_a, s_b);
 		ft_sort_two(s_b, -1);
 	}
-	while (size > 5 && size_b)
+	while (size > 10 && size_b)
 	{
 		oprs = ft_get_best_moves(*s_a, *s_b, size--, size_b++);
 		ft_run_oprs_lst(s_a, s_b, oprs);
@@ -113,7 +106,7 @@ t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size)
 		if (ft_is_sorted(*s_a, 1))
 			break ;
 	}
-	ft_golden_five(s_a, s_b, &size, &size_b);
+	ft_golden_nums(s_a, s_b, &size, &size_b);
 	ft_sort_three(s_a);
 	ft_return_to_stack_a(s_a, s_b, size, size_b);
 	ft_rotate_to_sort(s_a, ft_lstsize(*s_a));

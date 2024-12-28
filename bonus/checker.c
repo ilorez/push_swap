@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 19:35:29 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/27 17:22:18 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/28 16:22:58 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_found_err(t_list **s_a, t_list **s_b, t_error_code err)
 	ft_print_error(err);
 	ft_lstclear(s_a, free);
 	ft_lstclear(s_b, free);
-	return (0);
+	return (1);
 }
 
 int	ft_read_run_oprs(t_list **s_a, t_list **s_b, t_error_code err)
@@ -31,6 +31,7 @@ int	ft_read_run_oprs(t_list **s_a, t_list **s_b, t_error_code err)
 		type = ft_get_type(line);
 		if (!type)
 		{
+			get_next_line(-1);
 			err = ERR_INVALID_OPERATION;
 			break ;
 		}
@@ -61,7 +62,7 @@ int	main(int ac, char *av[])
 	if (err_code)
 		return (ft_found_err(&stack_a, &stack_b, err_code));
 	if (!ft_read_run_oprs(&stack_a, &stack_b, err_code))
-		return (0);
+		return (1);
 	if (ft_lstsize(stack_b) == 0 && ft_is_sorted(stack_a, 1))
 		ft_printf("\e[38;2;0;255;0mOK\n");
 	else

@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 08:51:01 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/27 14:55:51 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/28 16:59:08 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ int	main(int ac, char *av[])
 			err_code = ERR_MALLOC_FAIL;
 		ft_print_error(err_code);
 		ft_lstclear(&stack_a, free);
-		return (0);
+		return (1);
 	}
 	ft_sort_stack(&stack_a, &stack_b);
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);
+	return (0);
 }
 // ft_printf("stack A\n");
 // ft_print_stack(stack_a);
