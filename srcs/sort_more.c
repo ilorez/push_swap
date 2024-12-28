@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:14:33 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/28 18:23:44 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/28 18:35:56 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ t_bool	ft_sort_more(t_list **s_a, t_list **s_b, int size)
 		ft_op_px(s_a, s_b);
 		ft_sort_two(s_b, -1);
 	}
-	while (size > 10 && size_b)
+	while (size > 25 && size_b)
 	{
 		oprs = ft_get_best_moves(*s_a, *s_b, size--, size_b++);
 		ft_run_oprs_lst(s_a, s_b, oprs);
