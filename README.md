@@ -96,12 +96,13 @@ At this stage, I applied the algorithm I created. My approach involved dividing 
 2. **Sort More**  
 
    For sorting more than three numbers, I adapted the [Turk Algorithm](https://medium.com/@ayogun/push-swap-c1f5d2d41e97) with some modifications:  
-   - **First Change:** Adjusting the Terminal State in Stack A 
+   - **First Change:** Adjusting the Terminal State in Stack A
+
       Initially, the algorithm stopped when three elements remained in stack A. These were sorted directly, and the process continued. I modified this to scale the stopping point based on input size:
-        - For 500 numbers: Stop at 25 elements.
-        - For 100 numbers: Stop at 5 elements.
-        - For inputs larger than 400 numbers: Use a stopping point such as size / 20.
-        - The minimum stopping point remains 3 elements.
+        + For 500 numbers: Stop at 25 elements.
+        + For 100 numbers: Stop at 5 elements.
+        + For inputs larger than 400 numbers: Use a stopping point such as size / 20.
+        + The minimum stopping point remains 3 elements.
 
       At the stopping point:
         1. Push all remaining elements in stack A directly to stack B without any additional calculations **(Using: while (size > 3) => PB())**.
