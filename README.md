@@ -94,10 +94,18 @@ At this stage, I applied the algorithm I created. My approach involved dividing 
    This function handles sorting three numbers by evaluating six possible permutations.  
 
 2. **Sort More**  
+
    For sorting more than three numbers, I adapted the [Turk Algorithm](https://medium.com/@ayogun/push-swap-c1f5d2d41e97) with some modifications:  
-   - **First Change:**  
-     Instead of waiting until there are only three elements left in stack A, I stopped at five elements. At this point, I sorted the top two elements in stack A (from smallest to largest) and pushed them to stack B. Afterward, I used the same algorithm to return all elements from stack B to stack A.  
-     > *how bout not 5 how about more may 25 or 100 or the size / 3 think about it it's will be more more fast*
+   - **First Change:** Adjusting the Terminal State in Stack A 
+      Initially, the algorithm stopped when three elements remained in stack A. These were sorted directly, and the process continued. I modified this to scale the stopping point based on input size:
+        - For 500 numbers: Stop at 25 elements.
+        - For 100 numbers: Stop at 5 elements.
+        - For inputs larger than 400 numbers: Use a stopping point such as size / 20.
+        - The minimum stopping point remains 3 elements.
+
+      At the stopping point:
+        1. Push all remaining elements in stack A directly to stack B without any additional calculations **(Using: while (size > 3) => PB())**.
+        2. Use the same logic to return all elements from stack B to stack A by finding the correct position for the top number in stack B and using only RA or RRA to move the number to stack A.
      > *This adjustment reduced the average number of operations for 500 numbers by 50 to 200 operations in some cases.*  
    
    - **Second Change:**  
