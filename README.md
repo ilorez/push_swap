@@ -169,7 +169,8 @@ I added the `get_operation` function.
      - `0` and `-00000000`  
 
 3. **Checker Behavior:**  
-   - If stack B is not empty, the program should display `KO`.  
-   - Invalid operations should display `Error`.  
+   - If stack B is not empty, the program should display `KO`.
+   - Invalid operations should display `Error`.
+   - Also, I recommend checking for memory leaks. For example, run `valgrind ./checker 1 3 4`. Ensure that no memory leaks are reported, even if you write "invalid operation.".
 
 <!--https://www.tldraw.com/r/EgvfDvK-lGUgWZVgDT-3V?d=v-2934.-2479.1530.743.Ym7L05aVdUrCR4WmWzNFc-->
