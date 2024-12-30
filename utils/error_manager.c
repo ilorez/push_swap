@@ -6,7 +6,7 @@
 /*   By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 09:48:41 by znajdaou          #+#    #+#             */
-/*   Updated: 2024/12/26 14:23:14 by znajdaou         ###   ########.fr       */
+/*   Updated: 2024/12/27 17:57:26 by znajdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@ void	ft_print_error(t_error_code error_code)
 
 	err_msgs[ERR_SUCCESS] = (t_error_message){ERR_SUCCESS, "OK\n"};
 	err_msgs[ERR_INVALID_ARG] = (t_error_message){ERR_INVALID_ARG,
-		"Error\ninvalid argument\n"};
+		"Error\n"};
 	err_msgs[ERR_DUPLICATED_ARG] = (t_error_message){ERR_DUPLICATED_ARG,
-		"Error\nduplicated argument\n"};
+		"Error\n"};
 	err_msgs[ERR_EMPTY_ARG] = (t_error_message){ERR_EMPTY_ARG,
-		"Error\nEmpty argumnet\n"};
+		"Error\n"};
 	err_msgs[ERR_OUT_INT_RANGE] = (t_error_message){ERR_OUT_INT_RANGE,
-		"Error\nfound a number out of int range\n"};
+		"Error\n"};
 	err_msgs[ERR_MALLOC_FAIL] = (t_error_message){ERR_MALLOC_FAIL,
-		"Error\nan allocation failed\n"};
+		"Error\n"};
 	err_msgs[ERR_INVALID_OPERATION] = (t_error_message){ERR_INVALID_OPERATION,
-		"Error\nfound invalid operation\n"};
+		"Error\n"};
 	err_msgs[ERR_STACK_B_NOT_EMPTY] = (t_error_message){ERR_STACK_B_NOT_EMPTY,
-		"Error\nstack B not empty\n"};
+		"Error\n"};
 	err_msgs[ERR_UNKNOWN] = (t_error_message){ERR_UNKNOWN,
-		"Error\nUnknown error occurred\n"};
+		"Error\n"};
 	if (error_code < 0 || error_code >= ERR_COUNT)
 		error_code = ERR_UNKNOWN;
 	ft_putstr_fd(err_msgs[error_code].message, 2);

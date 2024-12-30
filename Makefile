@@ -6,7 +6,7 @@
 #    By: znajdaou <znajdaou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 16:09:52 by znajdaou          #+#    #+#              #
-#    Updated: 2024/12/27 17:20:33 by znajdaou         ###   ########.fr        #
+#    Updated: 2024/12/27 17:56:37 by znajdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ BONUS_NAME = checker
 
 LIBFT_DR = ./libft
 
-FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror
 INCLUDES_DRS = -I./includes -I./libft/includes
 CC = cc
 AR = ar rc
