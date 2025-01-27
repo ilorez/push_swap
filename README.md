@@ -46,7 +46,7 @@ The article provided some excellent insights, which I combined with ideas from o
 I used a tool called [TLDraw](https://www.tldraw.com/) to create a detailed algorithm using what I call "flow cards" (I’m not sure if that’s the right term, but it works XD). You can find it here in this [Board](https://www.tldraw.com/ro/e7_fqo8dLkR8jHe5QtgyP?d=v4824.-10444.19200.9320.Ym7L05aVdUrCR4WmWzNFc).  
 
 ### Step 6 - Setup  
-I created a repository and added [libft](https://github.com/ilorez/libft/tree/develop) (libft + get_next_line + ft_printf) because I needed all those functions. I also added some extra functions to libft that I’d need later, such as:  
+I created a repository and added [libft](https://github.com/ilorez/libft) (libft + get_next_line + ft_printf) because I needed all those functions. I also added some extra functions to libft that I’d need later, such as:  
 - `ft_atol`  
 - `ft_free_list_of_strs`  
 - Boolean type (because I wanted it).  
